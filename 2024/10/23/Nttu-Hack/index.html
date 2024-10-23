@@ -25,10 +25,27 @@
 <meta property="og:site_name" content="ktkting">
 <meta property="og:description" content="113-1 東大資安社第二次社課         講師: KT         本次內容主要參考資安這條路 ─ 以自建漏洞環境學習資訊安全 系列                            Slido 提問區               網址和網域組成     一個網址是由通訊協定、主機名稱(或子網域)與網域組成              https:&#x2F;&#x2F;">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hackmd.io/_uploads/S16uMryg1g.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rk6JwrkgJl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJi9YrJgJx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HJUU9r1gJg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/ryMEhBklkl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SyGHhrJxkl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/r1ymu1Ggyg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1v48mMeyg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/BJABUmfxyg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/BJ7NQSGe1g.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/ryLarBzlJg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJ00DHfeJg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJ5JpSGlke.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SkpyeIzgkx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SylwIUzgJl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SkGuUUzxke.png">
 <meta property="article:published_time" content="2024-10-23T07:44:21.000Z">
-<meta property="article:modified_time" content="2024-10-23T08:08:52.728Z">
+<meta property="article:modified_time" content="2024-10-23T08:11:57.732Z">
 <meta property="article:author" content="kting">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hackmd.io/_uploads/S16uMryg1g.png">
     
     
     <!--- Icon Part-->
@@ -265,8 +282,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-10-23 16:08:52</span>
-            <span class="mobile">2024-10-23 16:08:52</span>
+            <span class="desktop">2024-10-23 16:11:57</span>
+            <span class="mobile">2024-10-23 16:11:57</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -344,546 +361,485 @@
     <br>
     <br>
     <h2>TCP/IP 通訊協定</h2>
-
-<pre><code>&lt;h3&gt;目前為網際網路的基礎通訊架構，分為 4 層：&lt;/h3&gt;
-
-&lt;img src=&quot;https://hackmd.io/_uploads/S16uMryg1g.png&quot; alt=&quot;TCP/IP 四層架構&quot;&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;
-        &lt;h4&gt;第四層 - 應用層: 提供了網絡應用程序需要的各種服務。&lt;/h4&gt;
-        &lt;p&gt;&lt;code&gt;HTTP、HTTPS、FTP、SMTP、SSH、DNS …&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;h4&gt;第三層 - 傳輸層: 負責在不同主機之間提供端到端的通信。&lt;/h4&gt;
-        &lt;p&gt;&lt;code&gt;TCP / UDP&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;h4&gt;第二層 - 網路互連層: 負責在不同網絡之間的數據傳輸。&lt;/h4&gt;
-        &lt;p&gt;&lt;code&gt;IP (Internet Protocol)&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;h4&gt;第一層 - 網路存取層: 負責在相鄰網絡節點之間的物理和邏輯鏈路的傳輸。&lt;/h4&gt;
-        &lt;p&gt;&lt;code&gt;乙太網（Ethernet）、Wi-Fi（無線局域網協議）&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;資料傳遞流程&lt;/h3&gt;
-
-&lt;img src=&quot;https://hackmd.io/_uploads/rk6JwrkgJl.png&quot; alt=&quot;資料傳遞流程&quot;&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;A &lt;code&gt;應用層&lt;/code&gt; 將資料傳送給 &lt;code&gt;傳輸層&lt;/code&gt;。在 &lt;code&gt;傳輸層&lt;/code&gt;，資料被分割成較小的封包&lt;/li&gt;
-    &lt;li&gt;A &lt;code&gt;傳輸層&lt;/code&gt; 使用 TCP 或 UDP 協定來將封包封裝成傳輸層資料段&lt;/li&gt;
-    &lt;li&gt;A &lt;code&gt;傳輸層&lt;/code&gt; 將資料段傳遞給 A &lt;code&gt;網際網路層&lt;/code&gt;，並指定目的地的 IP 位址。&lt;/li&gt;
-    &lt;li&gt;在 A &lt;code&gt;網際網路層&lt;/code&gt;，IP 協定負責將資料段封裝成 IP 封包。IP 封包包含源 IP 位址和目的 IP 位址。&lt;/li&gt;
-    &lt;li&gt;IP 封包通過網際網路傳輸，在路由器之間進行轉發，直到到達目的地網路 B。&lt;/li&gt;
-    &lt;li&gt;在目的地網路上，目的地 B 主機的 &lt;code&gt;網際網路層&lt;/code&gt; 接收到 IP 封包。&lt;/li&gt;
-    &lt;li&gt;B &lt;code&gt;網際網路層&lt;/code&gt; 根據 IP 封包中的目的 IP 位址，將封包傳遞給相應的 B &lt;code&gt;傳輸層&lt;/code&gt; 協定（TCP 或 UDP）。&lt;/li&gt;
-    &lt;li&gt;目的地 B &lt;code&gt;傳輸層&lt;/code&gt; 解析接收到的資料段，並將資料段重新組合成原始的資料。&lt;/li&gt;
-    &lt;li&gt;最後，原始的資料在目的地 B &lt;code&gt;應用層&lt;/code&gt; 進行處理和應用。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;TCP(Transmission Control Protocol)&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;可提供一種可靠的位元組流保證資料完整、無失真並且按順序到達。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;傳輸資料被分成好幾個封包傳送時，當目的端電腦接收到每一個封包，就會傳回一個確認值&lt;/li&gt;
-    &lt;li&gt;對資料的掌控上及偵錯方面，就遠勝於 UDP，但速度則不如 UDP。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;TCP 三次握手 (Three-way Handshake)&lt;/h4&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;建立連接 (Browser：安安，在嗎？)&lt;/li&gt;
-    &lt;li&gt;伺服器回應 (Server 收到後回覆：在呀)&lt;/li&gt;
-    &lt;li&gt;完成握手 (Browser 收到後回覆：收到，太好了)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&quot;https://hackmd.io/_uploads/SJi9YrJgJx.png&quot; alt=&quot;TCP 三次握手&quot;&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;UDP(User Datagram Protocol)&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;不檢查封包是否已經到達目的地，並且不保證它們按順序到達。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;只負責送出及接收，不會收到一個封包就回傳一個確認的訊息，檢查則是靠著總和檢測值來判定。&lt;/li&gt;
-    &lt;li&gt;典型性應用：串流媒體（音訊和視訊等）這樣按時到達比可靠性更重要的應用&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;UDP 傳輸原理&lt;/h4&gt;
-
-&lt;p&gt;傳輸方（Server）不需確認接收方（Client）是否有收到封包&lt;/p&gt;
-&lt;img src=&quot;https://hackmd.io/_uploads/HJUU9r1gJg.png&quot; alt=&quot;UDP 傳輸原理&quot;&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;DNS(Domain Name System)&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;用來統整 IP 與網址對應的系統，像是網際網路的電話簿&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;用來做為 IP 與網址的轉換&lt;/li&gt;
-    &lt;li&gt;透過 DNS Server 的查詢才能讓網站的瀏覽者能正確的查看到他想看的網站&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;DNS 運作原理&lt;/h4&gt;
-
-&lt;p&gt;當你在瀏覽器輸入一串網址，瀏覽器會將這串網址送到離他最近的 DNS Server 去做查詢辨識，當他找到對應的 IP 時，就會回傳這組 IP 的網站資料給你，而若沒有查詢到，則會發生像是 DNS NOT FOUND，網頁或服務無法開啓的情況。&lt;/p&gt;
-&lt;img src=&quot;https://hackmd.io/_uploads/ryMEhBklkl.png&quot; alt=&quot;DNS 運作原理&quot;&gt;
-&lt;img src=&quot;https://hackmd.io/_uploads/SyGHhrJxkl.png&quot; alt=&quot;DNS 運作原理&quot;&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;Http Request Method&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;ol&gt;
-        &lt;li&gt;發送的 Request 根據不同的用途，有查詢、新增、修改或是刪除，稱為「Request Method」&lt;/li&gt;
-        &lt;li&gt;是為了讓 Server 能夠清楚辨別 request 的目的&lt;/li&gt;
-    &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h4&gt;HTTP GET&lt;/h4&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;跟 server 要一個連結或圖片，通常網頁都是 Get 的 request 比較多&lt;/li&gt;
-    &lt;li&gt;因為只是要獲取資訊、沒有 request body&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;HTTP POST&lt;/h4&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;需要執行一些動作時，會傳送 Post 的 request&lt;/li&gt;
-    &lt;li&gt;獲取「 指定的 」資訊，放在 request body ( Form data ) 裡面&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;其他的 Http Request Method&lt;/h4&gt;
-
-&lt;p&gt;
-    &lt;code&gt;Put&lt;/code&gt; : 取代掉整個 request&lt;br&gt;
-    &lt;code&gt;Patch&lt;/code&gt; : 修改部分 request （ 較推薦 ）&lt;br&gt;
-    &lt;code&gt;Delete&lt;/code&gt; : 刪除資源&lt;br&gt;
-    &lt;code&gt;Head&lt;/code&gt;: 只要獲取 request 的 header，不要 body&lt;br&gt;
-    &lt;code&gt;Option&lt;/code&gt; : 可以瞭解 server 提供哪些溝通方法
-&lt;/p&gt;
-
-&lt;h4&gt;HTTP Code&lt;/h4&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;&lt;code&gt;1xx&lt;/code&gt;: 再等等(Server 成功接收、但 Client 還要進行一些處理)&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;2xx&lt;/code&gt;: 成功了
-        &lt;ul&gt;
-            &lt;li&gt;&lt;code&gt;200 OK&lt;/code&gt;：連線成功&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;3xx&lt;/code&gt;: 去其他地方(重新導向)&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;4xx&lt;/code&gt;: 你挫賽了（Client 端錯誤）
-        &lt;ul&gt;
-            &lt;li&gt;&lt;code&gt;400 Bad Request&lt;/code&gt;：請求語法錯誤、或資源太大…等等&lt;/li&gt;
-            &lt;li&gt;&lt;code&gt;401 Unauthorized&lt;/code&gt;：未認證，可能需要登入或 Token&lt;/li&gt;
-            &lt;li&gt;&lt;code&gt;403 Forbidden&lt;/code&gt;：沒有權限&lt;/li&gt;
-            &lt;li&gt;&lt;code&gt;404 Not Found&lt;/code&gt;：找不到資源&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;5xx&lt;/code&gt;: 我挫賽了（Server 端錯誤）
-        &lt;ul&gt;
-            &lt;li&gt;&lt;code&gt;500 Internal Server Error&lt;/code&gt;：伺服器出錯，搶票時很可能發生&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;SQL injection&lt;/h2&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;利用網頁程式設計者忽略檢查使用者輸入內容造成攻擊&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;甚麼是 SQL&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;就是資料庫當中用來查詢資料的語言，所謂資料庫就是存放資料的地方。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3&gt;資料庫的結構&lt;/h3&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;資料庫名稱(database) &amp;gt; 資料表名稱(table) &amp;gt; 資料欄位名稱(column) &amp;gt; 資料(data)&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;SELECT * FROM `detail`&lt;/code&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;https://hackmd.io/_uploads/r1ymu1Ggyg.png&quot; alt=&quot;資料庫結構&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;常見的 SQL injection 類型&lt;/h3&gt;
-
-&lt;h4&gt;查詢隱藏的數據&lt;/h4&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;修改 SQL 語法來查詢資料庫的其他資料。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;假設一個購物商場透過 URL 對伺服器請求，查詢類別為 &lt;code&gt;Car&lt;/code&gt;
-        &lt;br&gt;&lt;code&gt;https://nttu.shop.tw/products?category=Car&lt;/code&gt;
-    &lt;/li&gt;
-    &lt;li&gt;參數 &lt;code&gt;Car&lt;/code&gt; 的內容會傳到後端並進行 SQL 語法的查詢
-        &lt;br&gt;&lt;code&gt;SELECT * FROM products WHERE category = &#39;Car&#39; AND released = 1&lt;/code&gt;
-    &lt;/li&gt;
-    &lt;li&gt;此 SQL 語法的內容為
-        &lt;ol&gt;
-            &lt;li&gt;選擇所有欄位名稱&lt;/li&gt;
-            &lt;li&gt;從資料表 products&lt;/li&gt;
-            &lt;li&gt;category 欄位為 Car&lt;/li&gt;
-            &lt;li&gt;且 released 發布狀態為 1 （已發布）&lt;/li&gt;
-        &lt;/ol&gt;
-    &lt;/li&gt;
-    &lt;li&gt;我們可以嘗試將 &lt;code&gt;AND released = 1&lt;/code&gt; 透過 &lt;code&gt;--&lt;/code&gt; 註解
-        &lt;br&gt;&lt;code&gt;https://nttu.shop.tw/products?category=Car&#39;+OR+1=1--&lt;/code&gt;
-        &lt;ul&gt;
-            &lt;li&gt;SQL 註解為 &lt;code&gt;--&lt;/code&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;code&gt;+&lt;/code&gt; 在網址列為 &lt;code&gt;%20&lt;/code&gt; 表示空白的意思&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;註解後的 SQL 語法
-        &lt;br&gt;&lt;code&gt;SELECT * FROM products WHERE category = &#39;Car&#39; OR 1=1--&#39; AND released = 1&lt;/code&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;h4&gt;影響應用程式邏輯&lt;/h4&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;修改 SQL 語法來影響應用程式的邏輯。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;假設一個可以利用帳號密碼登入的系統，輸入帳號密碼後 SQL 語句
-        &lt;br&gt;&lt;code&gt;SELECT * FROM users WHERE username = &#39;admin&#39; AND password = &#39;admin&#39;&lt;/code&gt;
-    &lt;/li&gt;
-    &lt;li&gt;帳號: &lt;code&gt;admin&lt;/code&gt;；密碼: &lt;code&gt;隨便輸入密碼&lt;/code&gt;
-        &lt;br&gt;&lt;code&gt;SELECT * FROM users WHERE username = &#39;administrator&#39;--&#39; AND password = &#39;123&#39;&lt;/code&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;LAB&lt;/h3&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;查詢隱藏的數據
-        &lt;a href=&quot;https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data&quot;&gt;&lt;strong&gt;LAB1&lt;/strong&gt;&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;影響應用程式邏輯
-        &lt;a href=&quot;https://portswigger.net/web-security/sql-injection/lab-login-bypass&quot;&gt;&lt;strong&gt;LAB2&lt;/strong&gt;&lt;/a&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;Command injection&lt;/h2&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;以透過這個漏洞去執行伺服器的命令 (Command)，通常有這個漏洞就可以做到遠端程式碼執行( RCE, Remote Code Execution)。&lt;br&gt;
-    主要是出現後端邏輯透過指令「串接」的方式。而且沒有去驗證使用者的輸入。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;要怎麼利用 Command injection&lt;/h3&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;先介紹一下 Linux 跟 Windows 的 Command&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;Command&lt;/h4&gt;
-
-&lt;img src=&quot;https://hackmd.io/_uploads/B1v48mMeyg.png&quot; alt=&quot;Command&quot;&gt;
-
-&lt;h4&gt;命令連接&lt;/h4&gt;
-
-&lt;img src=&quot;https://hackmd.io/_uploads/BJABUmfxyg.png&quot; alt=&quot;命令連接&quot;&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;也就是說在作業系統中執行命令的時候是可以連續執行多個命令的&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://github.com/payloadbox/command-injection-payload-list&quot;&gt;常用的 Payload&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;LAB&lt;/h3&gt;
-
-&lt;h4&gt;1. 最簡單沒有過濾的 command injection&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/web-security/os-command-injection/lab-simple&quot;&gt;&lt;strong&gt;LAB3&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4&gt;2. 沒有顯示在網頁上的 command injection 可以用 ping&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/web-security/os-command-injection/lab-blind-time-delays&quot;&gt;&lt;strong&gt;LAB4&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4&gt;3. 可以透過寫檔去判斷有沒有弱點&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/web-security/os-command-injection/lab-blind-output-redirection&quot;&gt;&lt;strong&gt;LAB5&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;XSS（Cross-Site Scripting, 跨網站腳本）&lt;/h2&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;攻擊者輸入惡意的 HTML 或 JavaScript，讓受害者瀏覽並執行網頁。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;img src=&quot;https://hackmd.io/_uploads/BJ7NQSGe1g.png&quot; alt=&quot;XSS 圖片&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://ithelp.ithome.com.tw/articles/10243967&quot;&gt;圖片來源&lt;/a&gt;&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;XSS 攻擊種類&lt;/h3&gt;
-
-&lt;h4&gt;反射型 XSS&lt;/h4&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;來自當前的 HTTP 請求&lt;br&gt;
-    因為伺服器而產生的安全風險。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;於請求中夾帶惡意語法或程式碼，可能夾帶在 URL 當中&lt;/li&gt;
-    &lt;li&gt;常在搜尋框、使用者登入口具有該種弱點&lt;/li&gt;
-    &lt;li&gt;常用於社交工程手法：釣魚信件，誘使受害者點擊惡意連結，以竊取使用者 Cookie&lt;/li&gt;
-    &lt;li&gt;範例如下：
-        &lt;br&gt;&lt;code&gt;http://www.example.com/upload.asp?id=&amp;lt;script&amp;gt;alert(1);&amp;lt;/script&amp;gt;&lt;/code&gt;
-    &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;這種手法要能夠成功攻擊，需要使用社交工程釣魚的技巧，使 User 點擊 URL 攻擊才會生效。&lt;/li&gt;
-    &lt;li&gt;因為 URL 通常看起來很詭異，所以 Hacker 通常會使用短網址或 HTML Encoder 的方式嘗試欺騙 User。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;HTML Encoder&lt;/h4&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;這是為了避免特殊符號造成的顯示問題，以及避免 HTML 將 URL 中的特殊符號視為語法而產生的編碼&lt;/li&gt;
-    &lt;li&gt;範例如下：
-        &lt;br&gt;&lt;code&gt;&amp;lt;script&amp;gt;alert(1);&amp;lt;/script&amp;gt;&lt;/code&gt; 會被轉換成 &lt;code&gt;%3Cscript%3Ealert(1)%3B%3C%2Fscript%3E&lt;/code&gt;
-    &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;但在這裡 Hacker 會反其道而行故意將要輸入在 URL 的特殊符號先轉換成 HTML Encoder 輸入，讓 WebSever 解析成特殊符號，進而進行 XSS 攻擊。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;h4&gt;儲存型 XSS&lt;/h4&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;儲存於受害者資料庫等處&lt;br&gt;
-    因為伺服器而產生的安全風險。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;此手法不需要使用社交工程釣魚的技巧，也能使 User 受到攻擊&lt;/li&gt;
-    &lt;li&gt;攻擊的方式是 Hacker 將 Javascript 儲存在伺服器的資料庫中，進而引起使 User 遭受攻擊。&lt;/li&gt;
-    &lt;li&gt;最常見的例子就是將 Javascript 注入留言板，當下一位 User 瀏覽網頁時，網頁會載入留言板的 Javascript 進而使 User 受到攻擊。&lt;/li&gt;
-    &lt;li&gt;範例如下：
-        &lt;br&gt;&lt;code&gt;我是壞人！ &amp;lt;script&amp;gt;alert(1);&amp;lt;/script&amp;gt;&lt;/code&gt;
-    &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;然後當 User 瀏覽網頁的時候，就會因為網頁先載入了當下頁面的惡意程式，於是 User 的頁面就會跳出一個 1 的 alert，以此類推， Hacker 在這裡如果輸入讓 User 傳送 cookie 或是其他惡意程式行為，網頁也會完全照做！&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;h4&gt;DOM 型 XSS&lt;/h4&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;來自瀏覽器中的程式碼非伺服器中的程式碼&lt;br&gt;
-    因為提取和執行惡意程式都是由 Browser 端完成，屬於前端 JavaScript 的安全漏洞&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;這種手法和反射型 XSS 一樣，都需要使用社交工程釣魚的技巧，使 User 點擊 URL 攻擊才會生效。&lt;/li&gt;
-    &lt;li&gt;Hacker 在 URL 輸入 DOM 物件，把物件嵌入網頁程式碼。&lt;/li&gt;
-    &lt;li&gt;範例：
-        &lt;br&gt;&lt;code&gt;&amp;lt;img src=# onerror=”alert(123)”&amp;gt;&lt;/code&gt;
-    &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;DOM(Document Object Model)&lt;/h4&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;是用來描述 HTML 文件的表示法，可以使用 JavaScript 來動態產生完整的網頁，而不必透過伺服器。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;簡單來說就是把一份 HTML 文件中的各種標籤及文字、圖片等，都定義成一個個網頁物件，而這些物件最終會成為一個樹狀結構&lt;/li&gt;
-    &lt;li&gt;範例如下：
-        &lt;br&gt;&lt;img src=&quot;https://hackmd.io/_uploads/ryLarBzlJg.png&quot; alt=&quot;DOM 結構&quot;&gt;
-    &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;CSRF(Cross-site request forgery, 跨網站請求)&lt;/h2&gt;
-
-&lt;h3&gt;攻擊流程&lt;/h3&gt;
-
-&lt;img src=&quot;https://hackmd.io/_uploads/SJ00DHfeJg.png&quot; alt=&quot;CSRF 攻擊流程&quot;&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;我們已經登入網站後，並取得 Cookie
-        &lt;br&gt;&lt;code&gt;Request:/login --&amp;gt; Response:set-cookie:sessionid=2fethkho&lt;/code&gt;
-    &lt;/li&gt;
-    &lt;li&gt;駭客透過釣魚網站或釣魚信件誘使受害者點擊瀏覽&lt;/li&gt;
-    &lt;li&gt;瀏覽器預設會把使用者在「目標網站」的 Cookie 連帶送出，因此雖然該請求是在「惡意網站」發出，但「目標網站」收到請求時因為帶有 credentials，所以會誤以為是合法的請求。&lt;/li&gt;
-    &lt;li&gt;受害者送出非經自身意願的請求&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;LAB&lt;/h3&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;我們透過 JavaScript 讓受害者瀏覽網頁的時候就送出修改信箱的封包。
-        &lt;a href=&quot;https://portswigger.net/web-security/csrf/lab-no-defenses&quot;&gt;&lt;strong&gt;LAB6&lt;/strong&gt;&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;如果後端在 POST 表單塞入 CSRF TOKEN，但其實可以允許 GET 的方法
-        &lt;a href=&quot;https://portswigger.net/web-security/csrf/lab-token-validation-depends-on-request-method&quot;&gt;&lt;strong&gt;LAB7&lt;/strong&gt;&lt;/a&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;SSRF(Server-side request forgery, 伺服器端請求偽造)&lt;/h2&gt;
-
-&lt;h3&gt;攻擊流程&lt;/h3&gt;
-
-&lt;img src=&quot;https://hackmd.io/_uploads/SJ5JpSGlke.png&quot; alt=&quot;SSRF 攻擊流程&quot;&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;一台是「中介伺服器端」，另一台是「內部受保護的伺服器端」，其中「內部受保護伺服器端」處於內網，並無對外的接口，需要透過「中介伺服器端」與外網的「客戶端」聯繫，因此，駭客從「客戶端」，做了一個「偽造請求」給伺服器端。&lt;/li&gt;
-    &lt;li&gt;「偽造請求」的傳送目標是「內部受保護的伺服器端」
-        &lt;br&gt;這個請求 (可以是 JSON 或是 XML 等格式) 是被包裝成「中介伺服器端」可接收的格式，但他實際的目的，是要被「內部受保護的伺服器端」(攻擊目標) 給存取，因此它也要同時符合「內部受保護的伺服器端」所能接收的格式。
-    &lt;/li&gt;
-    &lt;li&gt;「中介伺服器端」本身並不知道這個「偽造請求」會傷害「內部受保護的伺服器端」
-        &lt;br&gt;「中介伺服器端」是無意間被當成一個「跳板」，將「偽造請求」送去傷害「內部受保護的伺服器端」，真正做壞事的人是來自客戶端的駭客。
-    &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;如何做出一個偽造請求？&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;「內部受保護的伺服器端」很有可能是去呼叫 Google API、Facebook API、AWS API 、Apple API 等等第三方 Open API (如下圖所示)，而這些 API 的介面定義 (包含 endpoint 跟 payload )，都可以在公開的官方文件裡面找到。&lt;/p&gt;
-    &lt;img src=&quot;https://hackmd.io/_uploads/SkpyeIzgkx.png&quot; alt=&quot;第三方 API&quot;&gt;
-&lt;/blockquote&gt;
-
-&lt;h3&gt;要怎麼突破「中介伺服器端」讓它將「偽造請求」往後傳遞？&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;最常見的方式是透過「目錄遍歷」 (Path Traversal) 攻擊手法&lt;br&gt;
-    就是客戶端的偽造請求，可以透過「目錄遍歷」 (Path Traversal ) 攻擊手法，指定「中介伺服器端」要呼叫「內部受保護的伺服器端」的哪個 API 網址 ( endpoint )。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3&gt;目錄遍歷 (Path Traversal)&lt;/h3&gt;
-
-&lt;blockquote&gt;
-    &lt;p&gt;駭客就是利用這種目錄解析的原理，透過 &lt;code&gt;../&lt;/code&gt; 在目錄間穿梭，移動到他不該移動到的目錄底下，存取機密資訊。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4&gt;Path Traversal 攻擊手法&lt;/h4&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;前端頁面網址的目錄遍歷
-        &lt;ol&gt;
-            &lt;li&gt;架設網站的時候，會將網頁放在伺服器的某個目錄之下&lt;/li&gt;
-            &lt;li&gt;舉例來說，你架設了一個網站，網址為 &lt;code&gt;https://game.com&lt;/code&gt; 而網頁檔案的目錄如下所示：
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;code&gt;/home/document/123.html&lt;/code&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;code&gt;/home/app.conf&lt;/code&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/li&gt;
-            &lt;li&gt;網址 &lt;code&gt;https://game.com/document/123.html&lt;/code&gt; 對應到 &lt;code&gt;/home/document/123.html&lt;/code&gt; 這個檔案，而 &lt;code&gt;app.conf&lt;/code&gt; 是網站的設定檔，裡面有重要的機密設定資料，例如資料庫連線用的帳號密碼等等。&lt;/li&gt;
-            &lt;li&gt;駭客會利用 &lt;code&gt;../&lt;/code&gt; 指令企圖去存取 &lt;code&gt;app.conf&lt;/code&gt;，用以下網址去存取你的網站：
-                &lt;br&gt;&lt;code&gt;http://game.com/document/../app.conf&lt;/code&gt;
-            &lt;/li&gt;
-            &lt;li&gt;上述該網址對應到伺服器實際的目錄，即為 &lt;code&gt;/home/document/../app.conf&lt;/code&gt;，此路徑又同義於 &lt;code&gt;/home/app.conf&lt;/code&gt;&lt;/li&gt;
-            &lt;li&gt;在真正攻擊的時候通常不能直接使用 &lt;code&gt;../&lt;/code&gt; 在網址上，因為這個加了 &lt;code&gt;../&lt;/code&gt; 是要被傳送到「伺服器」端做解析的，變成無法傳遞到「伺服器」端，而造成攻擊失敗
-                &lt;br&gt;&lt;img src=&quot;https://hackmd.io/_uploads/SylwIUzgJl.png&quot; alt=&quot;目錄遍歷失敗&quot;&gt;
-            &lt;/li&gt;
-            &lt;li&gt;若是要避免客戶端解析我們傳送的目錄，便需要對 &lt;code&gt;../&lt;/code&gt; 進行 Url Encode 變成 &lt;code&gt;..%2F&lt;/code&gt;，透過編碼後的參數 &lt;code&gt;..%2Fapp.conf&lt;/code&gt; 就可以成功對應到 GET /document 這個路由，由伺服器端解析目錄，成功達成攻擊。
-                &lt;br&gt;&lt;img src=&quot;https://hackmd.io/_uploads/SkGuUUzxke.png&quot; alt=&quot;目錄遍歷成功&quot;&gt;
-            &lt;/li&gt;
-        &lt;/ol&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;h3&gt;LAB&lt;/h3&gt;
-
-&lt;h4&gt;1. 攻擊本機伺服器&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-localhost&quot;&gt;&lt;strong&gt;LAB8&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4&gt;2. 攻擊內網其他服務&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-backend-system&quot;&gt;&lt;strong&gt;LAB9&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4&gt;3. 如何 bypass 網站黑名單的方式&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/web-security/ssrf/lab-ssrf-with-blacklist-filter&quot;&gt;&lt;strong&gt;LAB10&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4&gt;4. bypass 網站白名單&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/web-security/ssrf/lab-ssrf-with-whitelist-filter&quot;&gt;&lt;strong&gt;LAB11&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;&lt;a href=&quot;https://forms.gle/FTxCez6KM6CRPUmf9&quot;&gt;No Hack No CTF 新手賽區報名表&lt;/a&gt;&lt;/h2&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;參考資料&lt;/h2&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://ithelp.ithome.com.tw/articles/10238860&quot;&gt;資安這條路&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://www.tsg.com.tw/blog-detail4-183-0-domain.htm#:~:text=%E7%B6%B2%E5%9D%80%E8%88%87%E7%B6%B2%E5%9F%9F%E7%9A%84%E7%B5%84%E6%88%90,%E5%9F%9F%E8%88%87%E9%A0%82%E7%B4%9A%E7%B6%B2%E5%9F%9F%E3%80%82&amp;text=%E9%80%9A%E5%B8%B8%E6%9C%83%E4%BB%A5%E4%BC%81%E6%A5%AD%E7%9A%84,%E4%BE%86%E5%81%9A%E8%A8%AD%E5%AE%9A%E8%88%87%E5%91%BD%E5%90%8D%E3%80%82&amp;text=%E5%8F%AF%E4%BB%A5%E6%83%B3%E5%83%8F%E6%88%90%E7%B6%B2%E7%AB%99%E7%9A%84,%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%9F%9F.jp%20%E7%AD%89%E3%80%82&quot;&gt;網域是什麼？網址與網域名稱的基本介紹&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://medium.com/@lagom247/%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B-tcp-ip-%E5%9B%9B%E5%B1%A4%E6%9E%B6%E6%A7%8B-osi%E4%B8%83%E5%B1%A4%E6%9E%B6%E6%A7%8B-e2c92c9cdc32&quot;&gt;《 網路架構 》TCP/IP 四層架構 &amp; OSI 七層架構&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://hackmd.io/@rgnkud/SkBECYMP6&quot;&gt;TCP/IP 4 層是什麼？ 跟 OSI 七層有什麼關係&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://www.explainthis.io/zh-hant/swe/tcp-udp&quot;&gt;TCP 與 UDP 是什麼？差異為何？&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://blog.cloudmax.com.tw/what-is-dns-domain-name-system/&quot;&gt;什麼是 DNS？為什麼需要設定 DNS？DNS 怎麼設定？&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://yakimhsu.com/project/project_w4_Network_http.html&quot;&gt;網路基礎 - HTTP、Request、Response&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://tech-blog.cymetrics.io/posts/jo/zerobased-cross-site-scripting/&quot;&gt;零基礎資安系列（二）-認識 XSS（Cross-Site Scripting）&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://medium.com/%E7%A8%8B%E5%BC%8F%E7%8C%BF%E5%90%83%E9%A6%99%E8%95%89/%E7%B6%B2%E7%AB%99%E5%AE%89%E5%85%A8-%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%AB%8B%E8%AB%8B%E6%B1%82%E5%81%BD%E9%80%A0-ssrf-%E6%94%BB%E6%93%8A-%E9%A0%85%E8%8E%8A%E8%88%9E%E5%8A%8D-%E6%84%8F%E5%9C%A8%E6%B2%9B%E5%85%AC-7a5524926362&quot;&gt;網站安全 🔒 伺服器端請求偽造 SSRF 攻擊 — 「項莊舞劍，意在沛公」&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://medium.com/%E7%A8%8B%E5%BC%8F%E7%8C%BF%E5%90%83%E9%A6%99%E8%95%89/%E7%9B%AE%E9%8C%84%E9%81%8D%E6%AD%B7-path-traversal-%E6%94%BB%E6%93%8A%E6%89%8B%E6%B3%95-238218d5115d&quot;&gt;網站安全 🔒 目錄遍歷 Path Traversal 攻擊手法&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+    <h3>目前為網際網路的基礎通訊架構，分為 4 層：</h3>
+    <img src="https://hackmd.io/_uploads/S16uMryg1g.png" alt="TCP/IP 四層架構">
+    <ul>
+        <li>
+            <h4>第四層 - 應用層: 提供了網絡應用程序需要的各種服務。</h4>
+            <p><code>HTTP、HTTPS、FTP、SMTP、SSH、DNS …</code></p>
+        </li>
+        <li>
+            <h4>第三層 - 傳輸層: 負責在不同主機之間提供端到端的通信。</h4>
+            <p><code>TCP / UDP</code></p>
+        </li>
+        <li>
+            <h4>第二層 - 網路互連層: 負責在不同網絡之間的數據傳輸。</h4>
+            <p><code>IP (Internet Protocol)</code></p>
+        </li>
+        <li>
+            <h4>第一層 - 網路存取層: 負責在相鄰網絡節點之間的物理和邏輯鏈路的傳輸。</h4>
+            <p><code>乙太網（Ethernet）、Wi-Fi（無線局域網協議）</code></p>
+        </li>
+    </ul>
+    <br>
+    <h3>資料傳遞流程</h3>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rk6JwrkgJl.png"
+                      alt="資料傳遞流程"
+                >
+    <ol>
+        <li>A <code>應用層</code> 將資料傳送給 <code>傳輸層</code>。在 <code>傳輸層</code>，資料被分割成較小的封包</li>
+        <li>A <code>傳輸層</code> 使用 TCP 或 UDP 協定來將封包封裝成傳輸層資料段</li>
+        <li>A <code>傳輸層</code> 將資料段傳遞給 A <code>網際網路層</code>，並指定目的地的 IP 位址。</li>
+        <li>在 A <code>網際網路層</code>，IP 協定負責將資料段封裝成 IP 封包。IP 封包包含源 IP 位址和目的 IP 位址。</li>
+        <li>IP 封包通過網際網路傳輸，在路由器之間進行轉發，直到到達目的地網路 B。</li>
+        <li>在目的地網路上，目的地 B 主機的 <code>網際網路層</code> 接收到 IP 封包。</li>
+        <li>B <code>網際網路層</code> 根據 IP 封包中的目的 IP 位址，將封包傳遞給相應的 B <code>傳輸層</code> 協定（TCP 或 UDP）。</li>
+        <li>目的地 B <code>傳輸層</code> 解析接收到的資料段，並將資料段重新組合成原始的資料。</li>
+        <li>最後，原始的資料在目的地 B <code>應用層</code> 進行處理和應用。</li>
+    </ol>
+    <br>
+    <h3>TCP(Transmission Control Protocol)</h3>
+    <blockquote>
+        <p>可提供一種可靠的位元組流保證資料完整、無失真並且按順序到達。</p>
+    </blockquote>
+    <ol>
+        <li>傳輸資料被分成好幾個封包傳送時，當目的端電腦接收到每一個封包，就會傳回一個確認值</li>
+        <li>對資料的掌控上及偵錯方面，就遠勝於 UDP，但速度則不如 UDP。</li>
+    </ol>
+    <h4>TCP 三次握手 (Three-way Handshake)</h4>
+    <ol>
+        <li>建立連接 (Browser：安安，在嗎？)</li>
+        <li>伺服器回應 (Server 收到後回覆：在呀)</li>
+        <li>完成握手 (Browser 收到後回覆：收到，太好了)</li>
+    </ol>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJi9YrJgJx.png"
+                      alt="TCP 三次握手"
+                >
+    <br>
+    <h3>UDP(User Datagram Protocol)</h3>
+    <blockquote>
+        <p>不檢查封包是否已經到達目的地，並且不保證它們按順序到達。</p>
+    </blockquote>
+    <ol>
+        <li>只負責送出及接收，不會收到一個封包就回傳一個確認的訊息，檢查則是靠著總和檢測值來判定。</li>
+        <li>典型性應用：串流媒體（音訊和視訊等）這樣按時到達比可靠性更重要的應用</li>
+    </ol>
+    <h4>UDP 傳輸原理</h4>
+    <p>傳輸方（Server）不需確認接收方（Client）是否有收到封包</p>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HJUU9r1gJg.png"
+                      alt="UDP 傳輸原理"
+                >
+    <br>
+    <h3>DNS(Domain Name System)</h3>
+    <blockquote>
+        <p>用來統整 IP 與網址對應的系統，像是網際網路的電話簿</p>
+    </blockquote>
+    <ol>
+        <li>用來做為 IP 與網址的轉換</li>
+        <li>透過 DNS Server 的查詢才能讓網站的瀏覽者能正確的查看到他想看的網站</li>
+    </ol>
+    <h4>DNS 運作原理</h4>
+    <p>當你在瀏覽器輸入一串網址，瀏覽器會將這串網址送到離他最近的 DNS Server 去做查詢辨識，當他找到對應的 IP 時，就會回傳這組 IP 的網站資料給你，而若沒有查詢到，則會發生像是 DNS NOT FOUND，網頁或服務無法開啓的情況。</p>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/ryMEhBklkl.png"
+                      alt="DNS 運作原理"
+                >
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SyGHhrJxkl.png"
+                      alt="DNS 運作原理"
+                >
+    <br>
+    <h3>Http Request Method</h3>
+    <blockquote>
+        <ol>
+            <li>發送的 Request 根據不同的用途，有查詢、新增、修改或是刪除，稱為「Request Method」</li>
+            <li>是為了讓 Server 能夠清楚辨別 request 的目的</li>
+        </ol>
+    </blockquote>
+    <h4>HTTP GET</h4>
+    <ol>
+        <li>跟 server 要一個連結或圖片，通常網頁都是 Get 的 request 比較多</li>
+        <li>因為只是要獲取資訊、沒有 request body</li>
+    </ol>
+    <h4>HTTP POST</h4>
+    <ol>
+        <li>需要執行一些動作時，會傳送 Post 的 request</li>
+        <li>獲取「 指定的 」資訊，放在 request body ( Form data ) 裡面</li>
+    </ol>
+    <h4>其他的 Http Request Method</h4>
+    <p>
+        <code>Put</code> : 取代掉整個 request<br>
+        <code>Patch</code> : 修改部分 request （ 較推薦 ）<br>
+        <code>Delete</code> : 刪除資源<br>
+        <code>Head</code>: 只要獲取 request 的 header，不要 body<br>
+        <code>Option</code> : 可以瞭解 server 提供哪些溝通方法
+    </p>
+    <h4>HTTP Code</h4>
+    <ul>
+        <li><code>1xx</code>: 再等等(Server 成功接收、但 Client 還要進行一些處理)</li>
+        <li><code>2xx</code>: 成功了
+            <ul>
+                <li><code>200 OK</code>：連線成功</li>
+            </ul>
+        </li>
+        <li><code>3xx</code>: 去其他地方(重新導向)</li>
+        <li><code>4xx</code>: 你挫賽了（Client 端錯誤）
+            <ul>
+                <li><code>400 Bad Request</code>：請求語法錯誤、或資源太大…等等</li>
+                <li><code>401 Unauthorized</code>：未認證，可能需要登入或 Token</li>
+                <li><code>403 Forbidden</code>：沒有權限</li>
+                <li><code>404 Not Found</code>：找不到資源</li>
+            </ul>
+        </li>
+        <li><code>5xx</code>: 我挫賽了（Server 端錯誤）
+            <ul>
+                <li><code>500 Internal Server Error</code>：伺服器出錯，搶票時很可能發生</li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <h2>SQL injection</h2>
+    <blockquote>
+        <p>利用網頁程式設計者忽略檢查使用者輸入內容造成攻擊</p>
+    </blockquote>
+    <br>
+    <h3>甚麼是 SQL</h3>
+    <blockquote>
+        <p>就是資料庫當中用來查詢資料的語言，所謂資料庫就是存放資料的地方。</p>
+    </blockquote>
+    <h3>資料庫的結構</h3>
+    <ul>
+        <li>資料庫名稱(database) &gt; 資料表名稱(table) &gt; 資料欄位名稱(column) &gt; 資料(data)</li>
+        <li><code>SELECT * FROM `detail`</code></li>
+        <li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/r1ymu1Ggyg.png"
+                      alt="資料庫結構"
+                ></li>
+    </ul>
+    <br>
+    <h3>常見的 SQL injection 類型</h3>
+    <h4>查詢隱藏的數據</h4>
+    <blockquote>
+        <p>修改 SQL 語法來查詢資料庫的其他資料。</p>
+    </blockquote>
+    <ul>
+        <li>假設一個購物商場透過 URL 對伺服器請求，查詢類別為 <code>Car</code>
+            <br><code>https://nttu.shop.tw/products?category=Car</code>
+        </li>
+        <li>參數 <code>Car</code> 的內容會傳到後端並進行 SQL 語法的查詢
+            <br><code>SELECT * FROM products WHERE category = 'Car' AND released = 1</code>
+        </li>
+        <li>此 SQL 語法的內容為
+            <ol>
+                <li>選擇所有欄位名稱</li>
+                <li>從資料表 products</li>
+                <li>category 欄位為 Car</li>
+                <li>且 released 發布狀態為 1 （已發布）</li>
+            </ol>
+        </li>
+        <li>我們可以嘗試將 <code>AND released = 1</code> 透過 <code>--</code> 註解
+            <br><code>https://nttu.shop.tw/products?category=Car'+OR+1=1--</code>
+            <ul>
+                <li>SQL 註解為 <code>--</code></li>
+                <li><code>+</code> 在網址列為 <code>%20</code> 表示空白的意思</li>
+            </ul>
+        </li>
+        <li>註解後的 SQL 語法
+            <br><code>SELECT * FROM products WHERE category = 'Car' OR 1=1--' AND released = 1</code>
+        </li>
+    </ul>
+    <br>
+    <h4>影響應用程式邏輯</h4>
+    <blockquote>
+        <p>修改 SQL 語法來影響應用程式的邏輯。</p>
+    </blockquote>
+    <ul>
+        <li>假設一個可以利用帳號密碼登入的系統，輸入帳號密碼後 SQL 語句
+            <br><code>SELECT * FROM users WHERE username = 'admin' AND password = 'admin'</code>
+        </li>
+        <li>帳號: <code>admin</code>；密碼: <code>隨便輸入密碼</code>
+            <br><code>SELECT * FROM users WHERE username = 'administrator'--' AND password = '123'</code>
+        </li>
+    </ul>
+    <h3>LAB</h3>
+    <ul>
+        <li>查詢隱藏的數據
+            <a target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data"><strong>LAB1</strong></a>
+        </li>
+        <li>影響應用程式邏輯
+            <a target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-injection/lab-login-bypass"><strong>LAB2</strong></a>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <h2>Command injection</h2>
+    <blockquote>
+        <p>以透過這個漏洞去執行伺服器的命令 (Command)，通常有這個漏洞就可以做到遠端程式碼執行( RCE, Remote Code Execution)。<br>
+        主要是出現後端邏輯透過指令「串接」的方式。而且沒有去驗證使用者的輸入。</p>
+    </blockquote>
+    <br>
+    <h3>要怎麼利用 Command injection</h3>
+    <ul>
+        <li>先介紹一下 Linux 跟 Windows 的 Command</li>
+    </ul>
+    <h4>Command</h4>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/B1v48mMeyg.png"
+                      alt="Command"
+                >
+    <h4>命令連接</h4>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BJABUmfxyg.png"
+                      alt="命令連接"
+                >
+    <ul>
+        <li>也就是說在作業系統中執行命令的時候是可以連續執行多個命令的</li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://github.com/payloadbox/command-injection-payload-list" >常用的 Payload <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+    </ul>
+    <br>
+    <h3>LAB</h3>
+    <h4>1. 最簡單沒有過濾的 command injection</h4>
+    <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/os-command-injection/lab-simple"><strong>LAB3</strong></a></p>
+    <h4>2. 沒有顯示在網頁上的 command injection 可以用 ping</h4>
+    <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/os-command-injection/lab-blind-time-delays"><strong>LAB4</strong></a></p>
+    <h4>3. 可以透過寫檔去判斷有沒有弱點</h4>
+    <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/os-command-injection/lab-blind-output-redirection"><strong>LAB5</strong></a></p>
+    <br>
+    <br>
+    <h2>XSS（Cross-Site Scripting, 跨網站腳本）</h2>
+    <blockquote>
+        <p>攻擊者輸入惡意的 HTML 或 JavaScript，讓受害者瀏覽並執行網頁。</p>
+    </blockquote>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BJ7NQSGe1g.png"
+                      alt="XSS 圖片"
+                >
+    <p><a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10243967" >圖片來源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+    <br>
+    <h3>XSS 攻擊種類</h3>
+    <h4>反射型 XSS</h4>
+    <blockquote>
+        <p>來自當前的 HTTP 請求<br>
+        因為伺服器而產生的安全風險。</p>
+    </blockquote>
+    <ol>
+        <li>於請求中夾帶惡意語法或程式碼，可能夾帶在 URL 當中</li>
+        <li>常在搜尋框、使用者登入口具有該種弱點</li>
+        <li>常用於社交工程手法：釣魚信件，誘使受害者點擊惡意連結，以竊取使用者 Cookie</li>
+        <li>範例如下：
+            <br><code>http://www.example.com/upload.asp?id=&lt;script&gt;alert(1);&lt;/script&gt;</code>
+        </li>
+    </ol>
+    <ul>
+        <li>這種手法要能夠成功攻擊，需要使用社交工程釣魚的技巧，使 User 點擊 URL 攻擊才會生效。</li>
+        <li>因為 URL 通常看起來很詭異，所以 Hacker 通常會使用短網址或 HTML Encoder 的方式嘗試欺騙 User。</li>
+    </ul>
+    <h4>HTML Encoder</h4>
+    <ol>
+        <li>這是為了避免特殊符號造成的顯示問題，以及避免 HTML 將 URL 中的特殊符號視為語法而產生的編碼</li>
+        <li>範例如下：
+            <br><code>&lt;script&gt;alert(1);&lt;/script&gt;</code> 會被轉換成 <code>%3Cscript%3Ealert(1)%3B%3C%2Fscript%3E</code>
+        </li>
+    </ol>
+    <ul>
+        <li>但在這裡 Hacker 會反其道而行故意將要輸入在 URL 的特殊符號先轉換成 HTML Encoder 輸入，讓 WebSever 解析成特殊符號，進而進行 XSS 攻擊。</li>
+    </ul>
+    <br>
+    <h4>儲存型 XSS</h4>
+    <blockquote>
+        <p>儲存於受害者資料庫等處<br>
+        因為伺服器而產生的安全風險。</p>
+    </blockquote>
+    <ol>
+        <li>此手法不需要使用社交工程釣魚的技巧，也能使 User 受到攻擊</li>
+        <li>攻擊的方式是 Hacker 將 Javascript 儲存在伺服器的資料庫中，進而引起使 User 遭受攻擊。</li>
+        <li>最常見的例子就是將 Javascript 注入留言板，當下一位 User 瀏覽網頁時，網頁會載入留言板的 Javascript 進而使 User 受到攻擊。</li>
+        <li>範例如下：
+            <br><code>我是壞人！ &lt;script&gt;alert(1);&lt;/script&gt;</code>
+        </li>
+    </ol>
+    <ul>
+        <li>然後當 User 瀏覽網頁的時候，就會因為網頁先載入了當下頁面的惡意程式，於是 User 的頁面就會跳出一個 1 的 alert，以此類推， Hacker 在這裡如果輸入讓 User 傳送 cookie 或是其他惡意程式行為，網頁也會完全照做！</li>
+    </ul>
+    <br>
+    <h4>DOM 型 XSS</h4>
+    <blockquote>
+        <p>來自瀏覽器中的程式碼非伺服器中的程式碼<br>
+        因為提取和執行惡意程式都是由 Browser 端完成，屬於前端 JavaScript 的安全漏洞</p>
+    </blockquote>
+    <ol>
+        <li>這種手法和反射型 XSS 一樣，都需要使用社交工程釣魚的技巧，使 User 點擊 URL 攻擊才會生效。</li>
+        <li>Hacker 在 URL 輸入 DOM 物件，把物件嵌入網頁程式碼。</li>
+        <li>範例：
+            <br><code>&lt;img src=# onerror=”alert(123)”&gt;</code>
+        </li>
+    </ol>
+    <h4>DOM(Document Object Model)</h4>
+    <blockquote>
+        <p>是用來描述 HTML 文件的表示法，可以使用 JavaScript 來動態產生完整的網頁，而不必透過伺服器。</p>
+    </blockquote>
+    <ol>
+        <li>簡單來說就是把一份 HTML 文件中的各種標籤及文字、圖片等，都定義成一個個網頁物件，而這些物件最終會成為一個樹狀結構</li>
+        <li>範例如下：
+            <br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/ryLarBzlJg.png"
+                      alt="DOM 結構"
+                >
+        </li>
+    </ol>
+    <br>
+    <br>
+    <h2>CSRF(Cross-site request forgery, 跨網站請求)</h2>
+    <h3>攻擊流程</h3>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJ00DHfeJg.png"
+                      alt="CSRF 攻擊流程"
+                >
+    <ul>
+        <li>我們已經登入網站後，並取得 Cookie
+            <br><code>Request:/login --&gt; Response:set-cookie:sessionid=2fethkho</code>
+        </li>
+        <li>駭客透過釣魚網站或釣魚信件誘使受害者點擊瀏覽</li>
+        <li>瀏覽器預設會把使用者在「目標網站」的 Cookie 連帶送出，因此雖然該請求是在「惡意網站」發出，但「目標網站」收到請求時因為帶有 credentials，所以會誤以為是合法的請求。</li>
+        <li>受害者送出非經自身意願的請求</li>
+    </ul>
+    <h3>LAB</h3>
+    <ul>
+        <li>我們透過 JavaScript 讓受害者瀏覽網頁的時候就送出修改信箱的封包。
+            <a target="_blank" rel="noopener" href="https://portswigger.net/web-security/csrf/lab-no-defenses"><strong>LAB6</strong></a>
+        </li>
+        <li>如果後端在 POST 表單塞入 CSRF TOKEN，但其實可以允許 GET 的方法
+            <a target="_blank" rel="noopener" href="https://portswigger.net/web-security/csrf/lab-token-validation-depends-on-request-method"><strong>LAB7</strong></a>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <h2>SSRF(Server-side request forgery, 伺服器端請求偽造)</h2>
+    <h3>攻擊流程</h3>
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJ5JpSGlke.png"
+                      alt="SSRF 攻擊流程"
+                >
+    <ol>
+        <li>一台是「中介伺服器端」，另一台是「內部受保護的伺服器端」，其中「內部受保護伺服器端」處於內網，並無對外的接口，需要透過「中介伺服器端」與外網的「客戶端」聯繫，因此，駭客從「客戶端」，做了一個「偽造請求」給伺服器端。</li>
+        <li>「偽造請求」的傳送目標是「內部受保護的伺服器端」
+            <br>這個請求 (可以是 JSON 或是 XML 等格式) 是被包裝成「中介伺服器端」可接收的格式，但他實際的目的，是要被「內部受保護的伺服器端」(攻擊目標) 給存取，因此它也要同時符合「內部受保護的伺服器端」所能接收的格式。
+        </li>
+        <li>「中介伺服器端」本身並不知道這個「偽造請求」會傷害「內部受保護的伺服器端」
+            <br>「中介伺服器端」是無意間被當成一個「跳板」，將「偽造請求」送去傷害「內部受保護的伺服器端」，真正做壞事的人是來自客戶端的駭客。
+        </li>
+    </ol>
+    <br>
+    <h3>如何做出一個偽造請求？</h3>
+    <blockquote>
+        <p>「內部受保護的伺服器端」很有可能是去呼叫 Google API、Facebook API、AWS API 、Apple API 等等第三方 Open API (如下圖所示)，而這些 API 的介面定義 (包含 endpoint 跟 payload )，都可以在公開的官方文件裡面找到。</p>
+        <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SkpyeIzgkx.png"
+                      alt="第三方 API"
+                >
+    </blockquote>
+    <h3>要怎麼突破「中介伺服器端」讓它將「偽造請求」往後傳遞？</h3>
+    <blockquote>
+        <p>最常見的方式是透過「目錄遍歷」 (Path Traversal) 攻擊手法<br>
+        就是客戶端的偽造請求，可以透過「目錄遍歷」 (Path Traversal ) 攻擊手法，指定「中介伺服器端」要呼叫「內部受保護的伺服器端」的哪個 API 網址 ( endpoint )。</p>
+    </blockquote>
+    <h3>目錄遍歷 (Path Traversal)</h3>
+    <blockquote>
+        <p>駭客就是利用這種目錄解析的原理，透過 <code>../</code> 在目錄間穿梭，移動到他不該移動到的目錄底下，存取機密資訊。</p>
+    </blockquote>
+    <h4>Path Traversal 攻擊手法</h4>
+    <ul>
+        <li>前端頁面網址的目錄遍歷
+            <ol>
+                <li>架設網站的時候，會將網頁放在伺服器的某個目錄之下</li>
+                <li>舉例來說，你架設了一個網站，網址為 <code>https://game.com</code> 而網頁檔案的目錄如下所示：
+                    <ul>
+                        <li><code>/home/document/123.html</code></li>
+                        <li><code>/home/app.conf</code></li>
+                    </ul>
+                </li>
+                <li>網址 <code>https://game.com/document/123.html</code> 對應到 <code>/home/document/123.html</code> 這個檔案，而 <code>app.conf</code> 是網站的設定檔，裡面有重要的機密設定資料，例如資料庫連線用的帳號密碼等等。</li>
+                <li>駭客會利用 <code>../</code> 指令企圖去存取 <code>app.conf</code>，用以下網址去存取你的網站：
+                    <br><code>http://game.com/document/../app.conf</code>
+                </li>
+                <li>上述該網址對應到伺服器實際的目錄，即為 <code>/home/document/../app.conf</code>，此路徑又同義於 <code>/home/app.conf</code></li>
+                <li>在真正攻擊的時候通常不能直接使用 <code>../</code> 在網址上，因為這個加了 <code>../</code> 是要被傳送到「伺服器」端做解析的，變成無法傳遞到「伺服器」端，而造成攻擊失敗
+                    <br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SylwIUzgJl.png"
+                      alt="目錄遍歷失敗"
+                >
+                </li>
+                <li>若是要避免客戶端解析我們傳送的目錄，便需要對 <code>../</code> 進行 Url Encode 變成 <code>..%2F</code>，透過編碼後的參數 <code>..%2Fapp.conf</code> 就可以成功對應到 GET /document 這個路由，由伺服器端解析目錄，成功達成攻擊。
+                    <br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SkGuUUzxke.png"
+                      alt="目錄遍歷成功"
+                >
+                </li>
+            </ol>
+        </li>
+    </ul>
+    <br>
+    <h3>LAB</h3>
+    <h4>1. 攻擊本機伺服器</h4>
+    <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-localhost"><strong>LAB8</strong></a></p>
+    <h4>2. 攻擊內網其他服務</h4>
+    <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-backend-system"><strong>LAB9</strong></a></p>
+    <h4>3. 如何 bypass 網站黑名單的方式</h4>
+    <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/ssrf/lab-ssrf-with-blacklist-filter"><strong>LAB10</strong></a></p>
+    <h4>4. bypass 網站白名單</h4>
+    <p><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/ssrf/lab-ssrf-with-whitelist-filter"><strong>LAB11</strong></a></p>
+    <br>
+    <br>
+    <h2><a class="link"   target="_blank" rel="noopener" href="https://forms.gle/FTxCez6KM6CRPUmf9" >No Hack No CTF 新手賽區報名表 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2>
+    <br>
+    <br>
+    <h2>參考資料</h2>
+    <ul>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10238860" >資安這條路 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://www.tsg.com.tw/blog-detail4-183-0-domain.htm#:~:text=%E7%B6%B2%E5%9D%80%E8%88%87%E7%B6%B2%E5%9F%9F%E7%9A%84%E7%B5%84%E6%88%90,%E5%9F%9F%E8%88%87%E9%A0%82%E7%B4%9A%E7%B6%B2%E5%9F%9F%E3%80%82&text=%E9%80%9A%E5%B8%B8%E6%9C%83%E4%BB%A5%E4%BC%81%E6%A5%AD%E7%9A%84,%E4%BE%86%E5%81%9A%E8%A8%AD%E5%AE%9A%E8%88%87%E5%91%BD%E5%90%8D%E3%80%82&text=%E5%8F%AF%E4%BB%A5%E6%83%B3%E5%83%8F%E6%88%90%E7%B6%B2%E7%AB%99%E7%9A%84,%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%9F%9F.jp%20%E7%AD%89%E3%80%82" >網域是什麼？網址與網域名稱的基本介紹 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://medium.com/@lagom247/%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B-tcp-ip-%E5%9B%9B%E5%B1%A4%E6%9E%B6%E6%A7%8B-osi%E4%B8%83%E5%B1%A4%E6%9E%B6%E6%A7%8B-e2c92c9cdc32" >《 網路架構 》TCP/IP 四層架構 & OSI 七層架構 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://hackmd.io/@rgnkud/SkBECYMP6" >TCP/IP 4 層是什麼？ 跟 OSI 七層有什麼關係 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://www.explainthis.io/zh-hant/swe/tcp-udp" >TCP 與 UDP 是什麼？差異為何？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://blog.cloudmax.com.tw/what-is-dns-domain-name-system/" >什麼是 DNS？為什麼需要設定 DNS？DNS 怎麼設定？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://yakimhsu.com/project/project_w4_Network_http.html" >網路基礎 - HTTP、Request、Response <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://tech-blog.cymetrics.io/posts/jo/zerobased-cross-site-scripting/" >零基礎資安系列（二）-認識 XSS（Cross-Site Scripting） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://medium.com/%E7%A8%8B%E5%BC%8F%E7%8C%BF%E5%90%83%E9%A6%99%E8%95%89/%E7%B6%B2%E7%AB%99%E5%AE%89%E5%85%A8-%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%AB%8B%E8%AB%8B%E6%B1%82%E5%81%BD%E9%80%A0-ssrf-%E6%94%BB%E6%93%8A-%E9%A0%85%E8%8E%8A%E8%88%9E%E5%8A%8D-%E6%84%8F%E5%9C%A8%E6%B2%9B%E5%85%AC-7a5524926362" >網站安全 🔒 伺服器端請求偽造 SSRF 攻擊 — 「項莊舞劍，意在沛公」 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+        <li><a class="link"   target="_blank" rel="noopener" href="https://medium.com/%E7%A8%8B%E5%BC%8F%E7%8C%BF%E5%90%83%E9%A6%99%E8%95%89/%E7%9B%AE%E9%8C%84%E9%81%8D%E6%AD%B7-path-traversal-%E6%94%BB%E6%93%8A%E6%89%8B%E6%B3%95-238218d5115d" >網站安全 🔒 目錄遍歷 Path Traversal 攻擊手法 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+    </ul>
 </body>
 </html>
 
@@ -900,7 +856,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-10-23 16:08:52
+                    :</strong> 2024-10-23 16:11:57
             </li>
         
         <li>
@@ -1001,7 +957,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Web Security 0 to 1</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">網址和網域組成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">一個網址是由通訊協定、主機名稱(或子網域)與網域組成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">網站組成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">TCP&#x2F;IP 通訊協定</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">網址和網域組成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">一個網址是由通訊協定、主機名稱(或子網域)與網域組成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">網站組成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">TCP&#x2F;IP 通訊協定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">目前為網際網路的基礎通訊架構，分為 4 層：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">資料傳遞流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">TCP(Transmission Control Protocol)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">UDP(User Datagram Protocol)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">DNS(Domain Name System)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">Http Request Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">SQL injection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">甚麼是 SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">資料庫的結構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">常見的 SQL injection 類型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">LAB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">Command injection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">要怎麼利用 Command injection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">LAB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">XSS（Cross-Site Scripting, 跨網站腳本）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">XSS 攻擊種類</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">CSRF(Cross-site request forgery, 跨網站請求)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">攻擊流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">LAB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">SSRF(Server-side request forgery, 伺服器端請求偽造)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">攻擊流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">如何做出一個偽造請求？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">要怎麼突破「中介伺服器端」讓它將「偽造請求」往後傳遞？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">目錄遍歷 (Path Traversal)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">LAB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">No Hack No CTF 新手賽區報名表 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">參考資料</span></a></li></ol>
 
     </div>
 </div>
