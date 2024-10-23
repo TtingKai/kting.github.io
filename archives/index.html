@@ -488,60 +488,6 @@
 
 
 
-<div class="post-scripts" data-swup-reload-script>
-    
-        
-<script src="/js/tools/tocToggle.js" type="module"></script>
-
-<script src="/js/layouts/toc.js" type="module"></script>
-
-<script src="/js/plugins/tabs.js" type="module"></script>
-
-    
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const welcomePage = document.querySelector('.welcome-page');
-        const mainContent = document.querySelector('.main-content');
-        const letters = document.querySelectorAll('.welcome-letter');
-
-        // 逐字顯示動畫
-        letters.forEach((letter, index) => {
-            letter.style.animationDelay = `${index * 0.1}s`; // 每個字母延遲 0.1 秒
-        });
-
-        if (letters.length > 0) {
-            // 監聽最後一個字母的動畫結束事件
-            const lastLetter = letters[letters.length - 1];
-            lastLetter.addEventListener('animationend', () => {
-                // 延遲 1 秒後淡出整個 welcome-page
-                setTimeout(() => {
-                    welcomePage.style.animation = 'fadeOutPage 2s ease-in-out forwards';
-                }, 2000); // 延遲 1000 毫秒 (1 秒)
-            });
-        }
-
-        if (welcomePage) {
-            // 監聽整個頁面的淡出動畫結束事件
-            welcomePage.addEventListener('animationend', (event) => {
-                if (event.animationName === 'fadeOutPage') {
-                    // 淡出後，隱藏 welcome 頁面，顯示主頁面
-                    welcomePage.style.display = 'none';
-                    mainContent.style.display = 'block';
-                    mainContent.style.opacity = 0;
-
-                    // 主頁面淡入動畫
-                    mainContent.animate(
-                        [{ opacity: 0 }, { opacity: 1 }],
-                        { duration: 2000, fill: 'forwards', easing: 'ease-in-out' }
-                    );
-                }
-            });
-        }
-    });
-</script>
-
 
 </body>
 </html>
