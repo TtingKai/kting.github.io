@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Web Security 0 to 1    &lt;blockquote&gt;     &lt;p&gt;113-1 東大資安社第二次社課&lt;&#x2F;p&gt;     &lt;p&gt;&lt;strong&gt;講師:&lt;&#x2F;strong&gt; KT&lt;&#x2F;p&gt;     &lt;p&gt;本次內容主要參考&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;i">
+        <meta name="description" content="Web Security 0 to 1                113-1 東大資安社第二次社課         講師: KT         本次內容主要參考資安這條路 ─ 以自建漏洞環境學習資訊安全 系列                            Slido 提問區               網址和網域組成     一個網址是由通訊協定、主機名稱(或">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ktkting">
+<meta property="og:title" content="Nttu Hack">
 <meta property="og:url" content="https://ktkting.github.io/2024/10/23/Nttu-Hack/index.html">
 <meta property="og:site_name" content="ktkting">
-<meta property="og:description" content="Web Security 0 to 1    &lt;blockquote&gt;     &lt;p&gt;113-1 東大資安社第二次社課&lt;&#x2F;p&gt;     &lt;p&gt;&lt;strong&gt;講師:&lt;&#x2F;strong&gt; KT&lt;&#x2F;p&gt;     &lt;p&gt;本次內容主要參考&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;i">
+<meta property="og:description" content="Web Security 0 to 1                113-1 東大資安社第二次社課         講師: KT         本次內容主要參考資安這條路 ─ 以自建漏洞環境學習資訊安全 系列                            Slido 提問區               網址和網域組成     一個網址是由通訊協定、主機名稱(或">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-23T07:44:21.953Z">
-<meta property="article:modified_time" content="2024-10-23T08:05:12.225Z">
+<meta property="article:published_time" content="2024-10-23T07:44:21.000Z">
+<meta property="article:modified_time" content="2024-10-23T08:07:03.631Z">
 <meta property="article:author" content="kting">
 <meta name="twitter:card" content="summary">
     
@@ -39,6 +39,8 @@
     <!--- Page Info-->
     
     <title>
+        
+            Nttu Hack -
         
         Ktkting&#39;s blog
     </title>
@@ -235,7 +237,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3"></h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Nttu Hack</h1>
                 </div>
             
             </div>
@@ -263,8 +265,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-10-23 16:05:12</span>
-            <span class="mobile">2024-10-23 16:05:12</span>
+            <span class="desktop">2024-10-23 16:07:03</span>
+            <span class="mobile">2024-10-23 16:07:03</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -298,63 +300,56 @@
     <title>Web Security 0 to 1</title>
 </head>
 <body>
+    <blockquote>
+        <p>113-1 東大資安社第二次社課</p>
+        <p><strong>講師:</strong> KT</p>
+        <p>本次內容主要參考<a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20108446/ironman/3463" >資安這條路 ─ 以自建漏洞環境學習資訊安全 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>系列</p>
+    </blockquote>
+    <p>
+        <a target="_blank" rel="noopener" href="https://app.sli.do/event/fWag1Fqhk64b9NBAWaJLav">
+        <strong>Slido 提問區</strong></a>
+    </p>
+    <br>
+    <h2>網址和網域組成</h2>
+    <h3>一個網址是由通訊協定、主機名稱(或子網域)與網域組成</h3>
+    <ul>
+        <li><code>https://www.nttu.edu.tw/</code> → 網址</li>
+        <li><code>https</code> → 通訊協定</li>
+        <li><code>www</code> → 主機名稱，或子網域(大多用來區分網站功能。)</li>
+        <li><code>nttu.edu.tw</code> → 網域名稱</li>
+        <li><code>nttu</code> → 次級網域(以學校的英文名稱或代表字來做設定與命名。)</li>
+        <li><code>edu.tw</code> → 頂級網域(像是網站的分類，政府組機關<code>.edu</code>或台灣網域<code>.tw</code>)</li>
+    </ul>
+    <br>
+    <br>
+    <h2>網站組成</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>前端(Frontend)</th>
+                <th>後端(Backend)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>瀏覽器</td>
+                <td>伺服器</td>
+            </tr>
+            <tr>
+                <td>看到的東西</td>
+                <td>看不到的東西</td>
+            </tr>
+            <tr>
+                <td>Html、CSS、JavaScript</td>
+                <td>PHP、NodeJS、Python</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h2>TCP/IP 通訊協定</h2>
 
-<pre><code>&lt;blockquote&gt;
-    &lt;p&gt;113-1 東大資安社第二次社課&lt;/p&gt;
-    &lt;p&gt;&lt;strong&gt;講師:&lt;/strong&gt; KT&lt;/p&gt;
-    &lt;p&gt;本次內容主要參考&lt;a href=&quot;https://ithelp.ithome.com.tw/users/20108446/ironman/3463&quot;&gt;資安這條路 ─ 以自建漏洞環境學習資訊安全&lt;/a&gt;系列&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://app.sli.do/event/fWag1Fqhk64b9NBAWaJLav&quot;&gt;&lt;strong&gt;Slido 提問區&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;br&gt;
-
-&lt;h2&gt;網址和網域組成&lt;/h2&gt;
-
-&lt;h3&gt;一個網址是由通訊協定、主機名稱(或子網域)與網域組成&lt;/h3&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;&lt;code&gt;https://www.nttu.edu.tw/&lt;/code&gt; → 網址&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;https&lt;/code&gt; → 通訊協定&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;www&lt;/code&gt; → 主機名稱，或子網域(大多用來區分網站功能。)&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;nttu.edu.tw&lt;/code&gt; → 網域名稱&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;nttu&lt;/code&gt; → 次級網域(以學校的英文名稱或代表字來做設定與命名。)&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;edu.tw&lt;/code&gt; → 頂級網域(像是網站的分類，政府組機關&lt;code&gt;.edu&lt;/code&gt;或台灣網域&lt;code&gt;.tw&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;網站組成&lt;/h2&gt;
-
-&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;前端(Frontend)&lt;/th&gt;
-            &lt;th&gt;後端(Backend)&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;瀏覽器&lt;/td&gt;
-            &lt;td&gt;伺服器&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;看到的東西&lt;/td&gt;
-            &lt;td&gt;看不到的東西&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Html、CSS、JavaScript&lt;/td&gt;
-            &lt;td&gt;PHP、NodeJS、Python&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;h2&gt;TCP/IP 通訊協定&lt;/h2&gt;
-
-&lt;h3&gt;目前為網際網路的基礎通訊架構，分為 4 層：&lt;/h3&gt;
+<pre><code>&lt;h3&gt;目前為網際網路的基礎通訊架構，分為 4 層：&lt;/h3&gt;
 
 &lt;img src=&quot;https://hackmd.io/_uploads/S16uMryg1g.png&quot; alt=&quot;TCP/IP 四層架構&quot;&gt;
 
@@ -397,7 +392,7 @@
 
 &lt;br&gt;
 
-&lt;h3&gt;TCP(Transmission Control Protocol )&lt;/h3&gt;
+&lt;h3&gt;TCP(Transmission Control Protocol)&lt;/h3&gt;
 
 &lt;blockquote&gt;
     &lt;p&gt;可提供一種可靠的位元組流保證資料完整、無失真並且按順序到達。&lt;/p&gt;
@@ -408,12 +403,12 @@
     &lt;li&gt;對資料的掌控上及偵錯方面，就遠勝於 UDP，但速度則不如 UDP。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4&gt;TCP 三次握手(hree-way handshake)&lt;/h4&gt;
+&lt;h4&gt;TCP 三次握手 (Three-way Handshake)&lt;/h4&gt;
 
 &lt;ol&gt;
-    &lt;li&gt;建立連接(Browser：安安，在嗎？)&lt;/li&gt;
-    &lt;li&gt;伺服器回應(Server 收到後回覆：在呀)&lt;/li&gt;
-    &lt;li&gt;完成握手(Browser 收到後回覆：收到，太好了)&lt;/li&gt;
+    &lt;li&gt;建立連接 (Browser：安安，在嗎？)&lt;/li&gt;
+    &lt;li&gt;伺服器回應 (Server 收到後回覆：在呀)&lt;/li&gt;
+    &lt;li&gt;完成握手 (Browser 收到後回覆：收到，太好了)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&quot;https://hackmd.io/_uploads/SJi9YrJgJx.png&quot; alt=&quot;TCP 三次握手&quot;&gt;
 
@@ -426,7 +421,7 @@
 &lt;/blockquote&gt;
 
 &lt;ol&gt;
-    &lt;li&gt;只負則送出及接收，不會收到一個封包就回傳一個確認的訊息，檢查則是靠著總和檢測值來判定。&lt;/li&gt;
+    &lt;li&gt;只負責送出及接收，不會收到一個封包就回傳一個確認的訊息，檢查則是靠著總和檢測值來判定。&lt;/li&gt;
     &lt;li&gt;典型性應用：串流媒體（音訊和視訊等）這樣按時到達比可靠性更重要的應用&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -481,11 +476,13 @@
 
 &lt;h4&gt;其他的 Http Request Method&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;Put&lt;/code&gt; : 取代掉整個 request&lt;br&gt;
-&lt;code&gt;Patch&lt;/code&gt; : 修改部分 request （ 較推薦 ）&lt;br&gt;
-&lt;code&gt;Delete&lt;/code&gt; : 刪除資源&lt;br&gt;
-&lt;code&gt;Head&lt;/code&gt;: 只要獲取 request 的 header，不要 body&lt;br&gt;
-&lt;code&gt;Option&lt;/code&gt; : 可以暸解 server 提供哪些溝通方法&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;Put&lt;/code&gt; : 取代掉整個 request&lt;br&gt;
+    &lt;code&gt;Patch&lt;/code&gt; : 修改部分 request （ 較推薦 ）&lt;br&gt;
+    &lt;code&gt;Delete&lt;/code&gt; : 刪除資源&lt;br&gt;
+    &lt;code&gt;Head&lt;/code&gt;: 只要獲取 request 的 header，不要 body&lt;br&gt;
+    &lt;code&gt;Option&lt;/code&gt; : 可以瞭解 server 提供哪些溝通方法
+&lt;/p&gt;
 
 &lt;h4&gt;HTTP Code&lt;/h4&gt;
 
@@ -608,7 +605,7 @@
 &lt;h2&gt;Command injection&lt;/h2&gt;
 
 &lt;blockquote&gt;
-    &lt;p&gt;以透過這個漏洞去執行伺服器的命令 (Command)，通常有這個漏洞就可以做到遠端程式碼執行( RCE,Remote Code Execution)。&lt;br&gt;
+    &lt;p&gt;以透過這個漏洞去執行伺服器的命令 (Command)，通常有這個漏洞就可以做到遠端程式碼執行( RCE, Remote Code Execution)。&lt;br&gt;
     主要是出現後端邏輯透過指令「串接」的方式。而且沒有去驗證使用者的輸入。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -617,7 +614,7 @@
 &lt;h3&gt;要怎麼利用 Command injection&lt;/h3&gt;
 
 &lt;ul&gt;
-    &lt;li&gt;先介紹一下 Linux 跟 Wondows 的 Command&lt;/li&gt;
+    &lt;li&gt;先介紹一下 Linux 跟 Windows 的 Command&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4&gt;Command&lt;/h4&gt;
@@ -900,14 +897,14 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> </li>
+        <li><strong>Title:</strong> Nttu Hack</li>
         <li><strong>Author:</strong> ktkting</li>
         <li><strong>Created at
                 :</strong> 2024-10-23 15:44:21</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-10-23 16:05:12
+                    :</strong> 2024-10-23 16:07:03
             </li>
         
         <li>
@@ -1007,8 +1004,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title"></div>
-        
+        <div class="page-title">Nttu Hack</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">網址和網域組成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">一個網址是由通訊協定、主機名稱(或子網域)與網域組成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">網站組成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">TCP&#x2F;IP 通訊協定</span></a></li></ol>
 
     </div>
 </div>
