@@ -3107,7 +3107,7 @@ html.is-animating .transition-fade {
   transition: all 0.1s linear;
 }
 .post-toc-wrap .post-toc .nav .nav-child {
-  display: block;
+  display: none;
 }
 .post-toc-wrap .post-toc .nav .active > .nav-child {
   display: block;
@@ -5227,11 +5227,11 @@ html.is-animating .scroll-progress-bar {
   font-weight: 350;
 }
 .home-banner-container .content .description p i {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-style: normal;
 }
 .home-banner-container .content .description p span {
-  font-size: 1.575rem;
+  font-size: 2.1rem;
 }
 @media (max-width: 768px) {
   .home-banner-container .content .description {
@@ -6015,16 +6015,16 @@ html.is-animating .scroll-progress-bar {
   --mermaid-theme: '';
 }
 .home-content-container {
-  margin-right: 38px;
+  margin-left: 38px;
 }
 @media (max-width: 768px) {
   .home-content-container {
-    margin-right: 0;
+    margin-left: 0;
   }
 }
 @media (max-width: 640px) {
   .home-content-container {
-    margin-right: 0;
+    margin-left: 0;
   }
 }
 .home-content-container .seo-reader-text {
