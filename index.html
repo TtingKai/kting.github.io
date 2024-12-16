@@ -514,7 +514,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -581,7 +581,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -608,8 +608,208 @@
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
+                        <a href="/2024/12/16/Chemistry/">
+                            Chemistry - WriteUp
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            Step 1 - Reconnaissance1sudo nmap -T4 -A 靶機IP
+
+-T4 - 針對 TCP 端口禁止動態掃描延遲超過 10ms-A - 全面系統檢測、啟用腳本檢測、掃描等會發現有一個port為 5000 的網頁
+
+
+
+查看此網頁會發現到是一個登入和註冊密碼的網站
+
+
+點擊 Register 申請一個新帳號
+
+
+登入後，會如下圖這樣，可以上傳 CIF 檔案點擊一下 ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Dec 16 2024 17:33:37 GMT+0800">
+                
+                    2024-12-16
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/HackTheBox/">HackTheBox</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2024/12/16/Chemistry/">Read more<span class="seo-reader-text">Chemistry - WriteUp</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/12/16/Tr0ll-1/">
+                            Tr0ll 1 - WriteUp
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            題目 
+
+取得到 root 權限，從&#x2F;root 目錄取得 proof.txt
+
+Step1 - Reconnaisance1sudo arp-scan -l
+
+
+
+
+1sudo nmap -sC -sV 靶機ip
+
+掃描完後會發現到有三個port在運行，分別是ftp、ssh、tcp
+
+
+1sudo dirsearch -u  靶機IP
+
+-u - 指定 url掃完會發現到有一個目錄...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Dec 16 2024 17:32:43 GMT+0800">
+                
+                    2024-12-16
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/VulnHub/">VulnHub</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2024/12/16/Tr0ll-1/">Read more<span class="seo-reader-text">Tr0ll 1 - WriteUp</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/12/16/Escalate-Linux-level-1/">
+                            Escalate_Linux 1 - WriteUp
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            題目
+Step1 - Reconnaisance1sudo arp-scan -l
+
+
+
+
+安裝 dirsearch 
+1sudo dirsearch -u 靶機ip
+
+-u - 指定 url掃描完會發現有一個 shell.php 路徑上網搜尋網頁如下:並且可以透過 cmd 找出id為何
+
+
+
+Step 2 - Exploitation1msfconsole
+
+
+1search web_de...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Dec 16 2024 17:31:06 GMT+0800">
+                
+                    2024-12-16
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/VulnHub/">VulnHub</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2024/12/16/Escalate-Linux-level-1/">Read more<span class="seo-reader-text">Escalate_Linux 1 - WriteUp</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
                         <a href="/2024/12/16/Kioptrix-level-1-1/">
-                            Kioptrix-level-1.1
+                            Kioptrix:level 1.1  - WriteUp
                         </a>
                     </h3>
 
@@ -655,7 +855,7 @@ sudo nmap -A -T4 10.0.2.15 - 該主機(可以是網址也可以是 ip)有開的�
         
     </div>
 
-    <a href="/2024/12/16/Kioptrix-level-1-1/">Read more<span class="seo-reader-text">Kioptrix-level-1.1</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2024/12/16/Kioptrix-level-1-1/">Read more<span class="seo-reader-text">Kioptrix:level 1.1  - WriteUp</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -671,7 +871,7 @@ sudo nmap -A -T4 10.0.2.15 - 該主機(可以是網址也可以是 ip)有開的�
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
                         <a href="/2024/12/16/Kioptrix-level-1/">
-                            Kioptrix-level-1
+                            Kioptrix:level 1 - WriteUp
                         </a>
                     </h3>
 
@@ -716,7 +916,7 @@ sudo nmap -A -T4 10.0.2.4 - 該主機(可以是網址也可以是 ip)有開的�
         
     </div>
 
-    <a href="/2024/12/16/Kioptrix-level-1/">Read more<span class="seo-reader-text">Kioptrix-level-1</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2024/12/16/Kioptrix-level-1/">Read more<span class="seo-reader-text">Kioptrix:level 1 - WriteUp</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -792,6 +992,9 @@ sudo nmap -A -T4 10.0.2.4 - 該主機(可以是網址也可以是 ip)有開的�
                         
                             
                             
+Chemistry
+
+
                         
                     </div>
 
@@ -844,6 +1047,16 @@ sudo nmap -A -T4 10.0.2.4 - 該主機(可以是網址也可以是 ip)有開的�
                         
                             
                             
+Kioptrix: Level 1
+
+Kioptrix: Level 1.1
+
+Escalate_Linux 1
+
+Tr0ll 1
+
+
+
                         
                     </div>
 
@@ -964,7 +1177,7 @@ sudo nmap -A -T4 10.0.2.4 - 該主機(可以是網址也可以是 ip)有開的�
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        6 posts in total
+                        9 posts in total
                     </span>
                     
                 </p>

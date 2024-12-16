@@ -13,21 +13,56 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://ktkting.github.io/2024/12/16/portswigger/"/>
+    <link rel="canonical" href="https://ktkting.github.io/2024/12/16/tr0ll-1/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="article">
-<meta property="og:title" content="PortSwigger">
-<meta property="og:url" content="https://ktkting.github.io/2024/12/16/PortSwigger/index.html">
+        <meta name="description" content="題目   取得到 root 權限，從&#x2F;root 目錄取得 proof.txt  Step1 - Reconnaisance1sudo arp-scan -l     1sudo nmap -sC -sV 靶機ip  掃描完後會發現到有三個port在運行，分別是ftp、ssh、tcp   1sudo dirsearch -u  靶機IP  -u - 指定 url掃完會發現到有一個目錄是se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tr0ll 1 - WriteUp">
+<meta property="og:url" content="https://ktkting.github.io/2024/12/16/Tr0ll-1/index.html">
 <meta property="og:site_name" content="ktkting">
+<meta property="og:description" content="題目   取得到 root 權限，從&#x2F;root 目錄取得 proof.txt  Step1 - Reconnaisance1sudo arp-scan -l     1sudo nmap -sC -sV 靶機ip  掃描完後會發現到有三個port在運行，分別是ftp、ssh、tcp   1sudo dirsearch -u  靶機IP  -u - 指定 url掃完會發現到有一個目錄是se">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-16T08:45:45.000Z">
-<meta property="article:modified_time" content="2024-12-16T08:59:19.665Z">
+<meta property="og:image" content="https://hackmd.io/_uploads/SyU4Kqt41e.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJwOtcKVJx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJ0U59K4Jl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HJ_2-r4EJg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rJe0ecFVyg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SkaRg9K4Je.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HyR1W5tV1l.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1g9XS441x.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/r1oqXSNV1g.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1HTmrEEyx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkKwzrVEJg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/BkR7GBEEyg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HJbO7H44kg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/Sk3bPHEEke.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJmZwrNNyg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/BkOTIrN4ke.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJXXDSNVyg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rJn8Dr4V1e.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HJd9UoFE1g.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJDUPoKNkg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/BkoPPBVNyl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1N2YiKVkx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HkP2yINVJl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rJNAWcFVyx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJSlGcK4Jl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SkoqZ9tNJl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkkMfcYEyl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/r1g-PhKEyx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkl4f9tNkg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1MKGqKNJx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1U5GcY41e.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/Sks2zqKE1x.png">
+<meta property="article:published_time" content="2024-12-16T09:32:43.000Z">
+<meta property="article:modified_time" content="2024-12-16T09:33:59.667Z">
 <meta property="article:author" content="kting">
-<meta property="article:tag" content="PortSwigger">
+<meta property="article:tag" content="VulnHub">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hackmd.io/_uploads/SyU4Kqt41e.png">
     
     
     <!--- Icon Part-->
@@ -39,7 +74,7 @@
     
     <title>
         
-            PortSwigger -
+            Tr0ll 1 - WriteUp -
         
         Ktkting&#39;s blog
     </title>
@@ -467,7 +502,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">PortSwigger</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Tr0ll 1 - WriteUp</h1>
                 </div>
             
             </div>
@@ -486,15 +521,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-12-16 16:45:45</span>
-        <span class="mobile">2024-12-16 16:45:45</span>
+        <span class="desktop">2024-12-16 17:32:43</span>
+        <span class="mobile">2024-12-16 17:32:43</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-16 16:59:19</span>
-            <span class="mobile">2024-12-16 16:59:19</span>
+            <span class="desktop">2024-12-16 17:33:59</span>
+            <span class="mobile">2024-12-16 17:33:59</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -506,7 +541,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/PortSwigger/">PortSwigger</a>&nbsp;
+                        <a href="/tags/VulnHub/">VulnHub</a>&nbsp;
                     </li>
                 
             </ul>
@@ -532,25 +567,278 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            
+            <p><a class="link"   target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/tr0ll-1,100/" >題目 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<blockquote>
+<p>取得到 root 權限，從&#x2F;root 目錄取得 proof.txt</p>
+</blockquote>
+<h3 id="Step1-Reconnaisance"><a href="#Step1-Reconnaisance" class="headerlink" title="Step1 - Reconnaisance"></a>Step1 - Reconnaisance</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo arp-scan -l</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SyU4Kqt41e.png"
+                      alt="image"
+                ></p>
+<br>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nmap -sC -sV 靶機ip</span><br></pre></td></tr></table></figure></div>
+
+<p>掃描完後會發現到有三個<code>port</code>在運行，分別是<code>ftp</code>、<code>ssh</code>、<code>tcp</code><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJwOtcKVJx.png"
+                      alt="image"
+                ></p>
+<br>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dirsearch -u  靶機IP</span><br></pre></td></tr></table></figure></div>
+
+<p><code>-u</code> - 指定 url<br>掃完會發現到有一個目錄是<code>secret</code><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJ0U59K4Jl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<h3 id="Step2-Information-Gathering"><a href="#Step2-Information-Gathering" class="headerlink" title="Step2 - Information Gathering"></a>Step2 - Information Gathering</h3><p>上網去 secret 看會發現到是一張圖<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HJ_2-r4EJg.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>嘗試使用<code>ftp</code>登入，帳號是<code>anonymous</code>，密碼沒有<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rJe0ecFVyg.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>成功登入後，使用<code>ls</code>查看有哪些東西，發現到有一個<code>pcap</code>檔<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SkaRg9K4Je.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>透過<code>get</code>指令將檔案下載到本地端<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HyR1W5tV1l.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>查看封包，會先找到第一個<code>ftp</code>相關的封包<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/B1g9XS441x.png"
+                      alt="image"
+                ></p>
+<p>點進去會看到她說有一個名為 secret_stuff.txt 的檔案<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/r1oqXSNV1g.png"
+                      alt="image"
+                ></p>
+<p>上網看此檔案，結果是沒東西<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/B1HTmrEEyx.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>再來看到第二個<code>ftp</code>相關的封包<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rkKwzrVEJg.png"
+                      alt="image"
+                ></p>
+<p>他說我們找到了<code>sup3rs3cr3tdirlol</code><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BkR7GBEEyg.png"
+                      alt="image"
+                ></p>
+<p>上網查看，會發現裡面有一個資料夾<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HJbO7H44kg.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>將<code>roflmao</code>檔案下載下來，透過<code>file</code>指令查看此檔案，發現是一個執行檔<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/Sk3bPHEEke.png"
+                      alt="image"
+                ></p>
+<p>透過<code>hexeditor</code>查看此檔案<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJmZwrNNyg.png"
+                      alt="image"
+                ><br>會找到一個<code>address</code>為<code>0x0856BF</code><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BkOTIrN4ke.png"
+                      alt="image"
+                ><br>將找到的<code>address</code>搜尋一下，會發現有兩個檔案<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJXXDSNVyg.png"
+                      alt="image"
+                ></p>
+<br>
+
+<h3 id="Step3-Exploitation"><a href="#Step3-Exploitation" class="headerlink" title="Step3 - Exploitation"></a>Step3 - Exploitation</h3><p>點開<code>good_luck</code>檔案，把內容存成一個<code>txt</code>檔<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rJn8Dr4V1e.png"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HJd9UoFE1g.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>點開<code>this_folder_contains_the_password</code>檔案，把內容存成一個<code>Pass.txt</code>檔<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJDUPoKNkg.png"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BkoPPBVNyl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>在<code>this_folder_contains_the_password</code>此檔案的檔名說，密碼就是<code>txt</code>檔名<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/B1N2YiKVkx.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>透過<code>hydra</code>指令進行爆破攻擊<br><code>-L</code> - 指定使用者的使用者名稱字典<br><code>-p</code> - 用於指定密碼破解，很少使用，一般採用密碼字典。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -L 使用者名稱字典檔 -p 指定密碼檔 ssh://靶機IP</span><br></pre></td></tr></table></figure></div>
+
+<p>找到靶機的<code>username</code>和<code>passoword</code><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HkP2yINVJl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@靶機IP</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rJNAWcFVyx.png"
+                      alt="image"
+                ></p>
+<p>透過下面指令，將指令環境變成 bash 環境</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c &#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJSlGcK4Jl.png"
+                      alt="image"
+                ></p>
+<br>
+<br>
+
+<h3 id="Step4-Privilege-Escalation"><a href="#Step4-Privilege-Escalation" class="headerlink" title="Step4 - Privilege Escalation"></a>Step4 - Privilege Escalation</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS" >LinPEAS <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><code>LinPEAS</code>提權腳本<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SkoqZ9tNJl.png"
+                      alt="image"
+                ></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">ls</span><br><span class="line">chmod +x linPEAS</span><br></pre></td></tr></table></figure></div>
+
+<p>問題來了，會發現<code>ssh</code>連線一段時間會關閉連線<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rkkMfcYEyl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>在<code>ssh</code>連線靶機時，得知靶機的系統為<code>Ubuntu 14.04.1 LTS</code></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">searchsploit 14.04</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/r1g-PhKEyx.png"
+                      alt="image"
+                ></p>
+<p>再次登入，並使用<code>37292</code>腳本<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rkl4f9tNkg.png"
+                      alt="image"
+                ></p>
+<p>將<code>37292</code>腳本轉為<code>37292.c</code></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc 37292.c -o ofc</span><br></pre></td></tr></table></figure></div>
+
+<p><code>-o</code> - 指定輸出檔名<br>執行<code>ofc</code>檔案<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/B1MKGqKNJx.png"
+                      alt="image"
+                ></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">whoami</span><br><span class="line">cd /root</span><br><span class="line">ls</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/B1U5GcY41e.png"
+                      alt="image"
+                ></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat proof.txt</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/Sks2zqKE1x.png"
+                      alt="image"
+                ></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a class="link"   target="_blank" rel="noopener" href="https://medium.com/@hackermentor/vulnhub-troll-1-walkthrough-39b655bc70f2" >Vulnhub: Troll 1 — Walkthrough <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://infosecwriteups.com/vulnhub-tr0ll-1-writeup-oscp-prep-by-dollarboysushil-657cf3453ba2" >Vulnhub: Tr0ll 1 Writeup (OSCP PREP) [by dollarboysushil] <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blog.davidou.org/archives/2633" >暴力破解工具-hydra <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/m/articles/10193746" >情報資料蒐集-ExploitDB 弱點資料庫 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://gitqwerty777.github.io/gcc-usage/" >gcc 參數介紹 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
         </div>
 
         
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> PortSwigger</li>
+        <li><strong>Title:</strong> Tr0ll 1 - WriteUp</li>
         <li><strong>Author:</strong> kting</li>
         <li><strong>Created at
-                :</strong> 2024-12-16 16:45:45</li>
+                :</strong> 2024-12-16 17:32:43</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-16 16:59:19
+                    :</strong> 2024-12-16 17:33:59
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/12/16/PortSwigger/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/12/16/Tr0ll-1/
         </li>
         <li>
             <strong>
@@ -572,7 +860,7 @@
             <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/PortSwigger/">#PortSwigger</a>&nbsp;
+                        <a href="/tags/VulnHub/">#VulnHub</a>&nbsp;
                     </li>
                 
             </ul>
@@ -586,13 +874,13 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/12/16/Kioptrix-level-1/"
+                        href="/2024/12/16/Chemistry/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Kioptrix:level 1 - WriteUp</span>
+                                <span class="post-nav-title-item">Chemistry - WriteUp</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -602,10 +890,10 @@
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/12/16/HackTheBox/"
+                        href="/2024/12/16/Escalate-Linux-level-1/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">HackTheBox</span>
+                                <span class="post-nav-title-item">Escalate_Linux 1 - WriteUp</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -626,8 +914,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">PortSwigger</div>
-        
+        <div class="page-title">Tr0ll 1 - WriteUp</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-Reconnaisance"><span class="nav-text">Step1 - Reconnaisance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Information-Gathering"><span class="nav-text">Step2 - Information Gathering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Exploitation"><span class="nav-text">Step3 - Exploitation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step4-Privilege-Escalation"><span class="nav-text">Step4 - Privilege Escalation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li></ol>
 
     </div>
 </div>

