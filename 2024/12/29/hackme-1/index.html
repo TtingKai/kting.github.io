@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://hackmd.io/_uploads/ryTMKUCNkg.png">
 <meta property="og:image" content="https://hackmd.io/_uploads/HJjJt8CNyg.png">
 <meta property="article:published_time" content="2024-12-29T13:36:52.000Z">
-<meta property="article:modified_time" content="2024-12-29T14:56:32.184Z">
+<meta property="article:modified_time" content="2024-12-29T14:57:08.469Z">
 <meta property="article:author" content="kting">
 <meta property="article:tag" content="VulnHub">
 <meta name="twitter:card" content="summary">
@@ -525,8 +525,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-29 22:56:32</span>
-            <span class="mobile">2024-12-29 22:56:32</span>
+            <span class="desktop">2024-12-29 22:57:08</span>
+            <span class="mobile">2024-12-29 22:57:08</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -679,7 +679,7 @@
                 ></p>
 <br>
 
-<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a<span class="string">&#x27; union select group_concat(table_name),2,3 from information_schema.tables where table_schema-&#x27;</span>webapphacking<span class="string">&#x27;--</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a<span class="string">&#x27; union select group_concat(table_name),2,3 from information_schema.tables where table_schema=&#x27;</span>webapphacking<span class="string">&#x27;-- -</span></span><br></pre></td></tr></table></figure></div>
 
 <p><code>group_concat()</code> - MySQL 能夠將<code>query</code>出來的結果以,形式隔開<br><code>information_schema.tables</code> - 是一個資料表，紀錄了資料庫中的所有資料表的相關資訊。<br><code>table_schema=&#39;webapphacking&#39;</code> - 只列出屬於名為 <code>webapphacking</code> 資料庫中的表名。<br><img  
                      lazyload
@@ -891,7 +891,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-29 22:56:32
+                    :</strong> 2024-12-29 22:57:08
             </li>
         
         <li>
